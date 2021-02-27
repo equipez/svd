@@ -1,1 +1,1 @@
-This is the stable repository of svd.
+This is a development repository of svd.
