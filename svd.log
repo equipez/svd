@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.2.26)  28 FEB 2021 02:38
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.2.26)  28 FEB 2021 02:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1560,7 +1560,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [8] [9] [10] [11] [12] (./svd.bbl [13]) [14] (./svd.aux)
 Package rerunfilecheck Info: File `svd.out' has not changed.
-(rerunfilecheck)             Checksum: 02DF70D85658B7E6AB77CD014417EDA5;1543.
+(rerunfilecheck)             Checksum: 268FF03C38814BBBAEE9240734EAF6FB;1495.
  ) 
 Here is how much of TeX's memory you used:
  39481 strings out of 476966
