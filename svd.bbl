@@ -1,0 +1,51 @@
+\begin{thebibliography}{1}
+
+\bibitem{Cao_Feng_2003}
+Z.-H. Cao and L.-H. Feng.
+\newblock A note on variational representation for singular values of matrix.
+\newblock {\em Appl. Math. Comput.}, 143:559--563, 2003.
+
+\bibitem{Eckart_Young_1939}
+C.~Eckart and G.~Young.
+\newblock A principal axis transformation for non-{H}ermitian matrices.
+\newblock {\em Bull. Amer. Math. Soc.}, 45:118--121, 1939.
+
+\bibitem{Fan_Hoffman_1955}
+Ky~Fan and A.~J. Hoffman.
+\newblock Some metric inequalities in the space of matrices.
+\newblock {\em Proc. Amer. Math. Soc.}, 6:111--116, 1955.
+
+\bibitem{Han_Neumann_2013}
+L.~Han and M.~Neumann.
+\newblock Inner product spaces, orthogonal projection, least squares, and
+  singular value decomposition.
+\newblock In L.~Hogben, editor, {\em Handbook of Linear Algebra}. CRC Press,
+  Boca Raton, FL, 2013.
+
+\bibitem{Jordan_1874}
+C.~Jordan.
+\newblock M\'emoire sur les formes bilin\'eaires.
+\newblock {\em J. Math. Pures Appl.}, 19:35--54, 1874.
+
+\bibitem{Koranyi_2001}
+A.~Kor{\'a}nyi.
+\newblock Around the finite-dimensional spectral theorem.
+\newblock {\em Amer. Math. Monthly}, 108:120--125, 2001.
+
+\bibitem{Lanczos_1958}
+C.~Lanczos.
+\newblock Linear systems in self-adjoint form.
+\newblock {\em Amer. Math. Monthly}, 65:665--679, 1958.
+
+\bibitem{Mathias_2013}
+R.~Mathias.
+\newblock Singular values and singular value inequalities.
+\newblock In L.~Hogben, editor, {\em Handbook of Linear Algebra}. CRC Press,
+  Boca Raton, FL, 2013.
+
+\bibitem{Trefethen_Bau_1997}
+L.~N. Trefethen and D.~Bau~III.
+\newblock {\em Numerical Linear Algebra}.
+\newblock SIAM, Philadelphia, 1997.
+
+\end{thebibliography}

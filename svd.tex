@@ -1,0 +1,1484 @@
+\documentclass[11pt,a4paper]{article}
+%\documentclass[11pt,a4paper,draft]{article}
+
+\voffset=-1.5cm \hoffset=-1.4cm \textwidth=16cm \textheight=22.0cm
+
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{empheq}
+\usepackage{bm}
+\usepackage{enumerate}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage[bbgreekl]{mathbbol}
+\DeclareSymbolFontAlphabet{\mathbbm}{bbold}
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+\usepackage{bbm}
+\usepackage{url}
+\usepackage{rotating}
+\usepackage{eqlist}
+
+
+% graph, tikz and pgf
+%\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{tikz,tikzscale,pgf,pgfarrows,pgfnodes,filecontents,tikz-cd,}
+\usetikzlibrary{arrows,arrows.meta,patterns,positioning,decorations.markings,shapes}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage[justification=centering]{caption}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.11}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{accents}
+\usepackage{xspace}
+\usepackage{silence}
+\WarningFilter{latex}{Writing or overwriting file} % Mute the warning about 'writing/overwriting file'
+\WarningFilter{latex}{Writing file} % Mute the warning about 'writing/overwriting file'
+\WarningFilter{latex}{Tab has} % Mute the warning about 'Tab has been converted to Blank Space'
+\usepackage[normalem]{ulem}
+\usepackage[toc,page]{appendix}
+\renewcommand{\appendixpagename}{\Large{Appendix}}
+\renewcommand{\appendixname}{Appendix}
+\renewcommand{\appendixtocname}{Appendix}
+%\usepackage{sectsty}
+\usepackage{multirow,booktabs}
+\usepackage{enumitem}
+\usepackage{upgreek}
+\setlist[itemize]{leftmargin=*}
+
+%\usepackage[nobottomtitles*]{titlesec} % No section title at the bottom of pages
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{darkblue}{rgb}{0,0.1,0.5}
+\definecolor{darkgreen}{rgb}{0,0.5,0.1}
+\usepackage{hyperref}
+\hypersetup{ colorlinks,%
+linkcolor=darkblue,%
+anchorcolor=darkblue,
+citecolor=darkblue,%
+urlcolor=darkblue}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{refcheck} % Check unused labels
+
+\usepackage[section]{algorithm}
+\usepackage{algpseudocode,algorithmicx}
+\newcommand{\INPUT}{\textbf{Input}}
+\newcommand{\FOR}{\textbf{For}~}
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
+\algrenewcommand\alglinenumber[1]{\normalsize #1.}
+\newcommand*\Let[2]{\State #1 $=$ #2}
+
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{acknowledgement}{Acknowledgement}%[section]
+\newtheorem{alg}{Algorithm}%[section]
+\newtheorem{axiom}{Axiom}%[section]
+\newtheorem{case}{Case}%[section]
+\newtheorem{claim}{Claim}%[section]
+\newtheorem{conclusion}{Conclusion}%[section]
+\newtheorem{condition}{Condition}%[section]
+\newtheorem{conjecture}{Conjecture}%[section]
+\newtheorem{corollary}{Corollary}%[section]
+\newtheorem{criterion}{Criterion}%[section]
+\newtheorem{exercise}{Exercise}%[section]
+\newtheorem{lemma}{Lemma}%[section]
+\newtheorem{notation}{Notation}%[section]
+\newtheorem{problem}{Problem}%[section]
+\newtheorem{proposition}{Proposition}%[section]
+\newtheorem{remark}{Remark}%[section]
+\newtheorem{solution}{Solution}%[section]
+\newtheorem{assumption}{Assumption}%[section]
+\newtheorem{summary}{Summary}%[section]
+\newtheorem{note}{Note}%[section]
+\newtheorem{doubt}{Doubt}%[section]
+\newtheorem{properties}{Properties}%[section]
+\newtheorem{example}{Example}%[section]
+\newtheorem{stronconv}{Strong Convergence}%[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}%[section]
+
+% Prevent footnote from running to the next page
+\interfootnotelinepenalty=10000
+% No line break in inline math
+\interdisplaylinepenalty=10000
+\relpenalty=10000
+\binoppenalty=10000
+% No widow or orphan lines
+%\clubpenalty = 10000
+%\widowpenalty = 10000
+%\displaywidowpenalty = 10000
+
+\usepackage{xpatch}
+\xpatchcmd{\proof}{\itshape}{\normalfont\proofnamefont}{}{}
+\newcommand{\proofnamefont}{\bfseries}
+
+\usepackage{relsize}
+\usepackage{nccmath}
+\DeclareMathOperator*{\mcap}{\medmath{\bigcap}}
+\DeclareMathOperator*{\mcup}{\medmath{\bigcup}}
+%\renewcommand{\cap}{\mathsmaller{\bigcap}}
+%\renewcommand{\cap}{\mcap}
+
+\setlength{\unitlength}{1mm}
+
+\def\real{\mathbb{R}}
+\def\BB{\mathcal{B}}
+\def\SS{\mathbb{S}}
+\def\ZZ{\mathbb{Z}}
+\def\NN{\mathbb{N}}
+\def\FF{\mathbb{F}}
+\def\CC{\mathbb{C}}
+\newcommand{\sss}[1]{{\scriptscriptstyle{#1}}}
+\newcommand{\sups}[1]{{#1}}
+\newcommand{\sK}{{\scriptscriptstyle{K}}}
+\newcommand{\sT}{{\scriptscriptstyle{T}}}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\fro}{{\scriptscriptstyle{\textnormal{F}}}}
+\newcommand{\trs}{{\scriptscriptstyle{\mathsf{T}}}}
+\newcommand{\hmt}{{\scriptscriptstyle{{\mathsf{H}}}}}
+\newcommand{\pin}{{\scriptscriptstyle{{\mathsf{+}}}}}
+\newcommand{\inv}{{-1}}
+\newcommand{\adj}{*}
+
+\DeclareMathOperator{\sort}{sort}
+\DeclareMathOperator*{\Argmax}{Argmax}
+\DeclareMathOperator*{\Argmin}{Argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\med}{med}
+\DeclareMathOperator{\essinf}{essinf}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\ind}[2]{\operatorname{\mathbbm{1}}\;\!\!\!\big(#2\in#1\big)}
+\newcommand{\diag}{\operatorname*{diag}}
+\newcommand{\Diag}{\operatorname*{Diag}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\disth}{{\operatorname{\updelta_{\sss{H}}}}}
+\newcommand{\Pred}{\mathrm{Pred}}
+\newcommand{\cs}{\text{c}}
+\newcommand{\hp}{\circ}
+\newcommand{\card}{{\rm card}}
+\newcommand{\fr}{\operatorname{fr}}
+\newcommand{\sg}[1]{\bf { #1 }}
+\newcommand{\ceil}[1]{ {\lceil{#1}\rceil} }
+\newcommand{\floor}[1]{ {\lfloor{#1}\rfloor} }
+%\renewcommand{\emph}{\textbf}
+%\newcommand{\ones}{\mathbbm{1}}
+\newcommand{\ones}{1}
+\newcommand{\cc}{\sss{\textnormal{C}}}
+\newcommand{\dec}{\sss{\textnormal{D}}}
+\newcommand{\cauchy}{\sss{\textnormal{C}}}
+\newcommand{\scauchy}{\sss{\textnormal{S}}}
+\newcommand{\etc}{{etc.}}
+\newcommand{\ie}{{i.e.}}
+\newcommand{\eg}{{e.g.}}
+\newcommand{\etal}{{et al.}}
+%\newcommand*{\defeq}{\stackrel{\mbox{\normalfont\tiny{\textnormal{def}}}}{=}}
+\newcommand\defeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
+\newcommand{\crit}{\textnormal{crit}}
+\newcommand{\rsg}{\hat{\partial}}
+\newcommand{\gsg}{\partial}
+\newcommand{\dom}{\textnormal{dom}}
+\newcommand{\tf}{{\textnormal{f}}}
+\newcommand{\tg}{{\textnormal{g}}}
+\newcommand{\ts}{{\textnormal{s}}}
+\newcommand{\st}{\textnormal{s.t.}}
+\newcommand{\me}{\mathrm{e}}
+\newcommand{\md}{\mathrm{d}}
+\newcommand{\lev}{\mathrm{lev}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bx}{\mathbf{u}}
+%\newcommand{\bb}{\mathbf{f}}
+\newcommand{\bb}{\mathbf{r}}
+\newcommand{\nov}{n_{\textnormal{o}}}
+\newcommand{\MATLAB}{\textsc{Matlab}\xspace}
+\newcommand{\rpss}{{SS}}
+\newcommand{\rdfs}{{DF}}
+\newcommand{\pfs}{{FS}}
+\newcommand{\cg}{{CG}}
+\newcommand{\hem}{{HEM}}
+\newcommand{\prblm}{\texttt}
+\DeclareMathAlphabet{\mathsfit}{T1}{\sfdefault}{\mddefault}{\sldefault}
+\SetMathAlphabet{\mathsfit}{bold}{T1}{\sfdefault}{\bfdefault}{\sldefault}
+\newcommand{\prbb}{\mathsfit{p}}
+\newcommand{\pp}{\mathsf{p}}
+\newcommand{\qq}{\mathsf{q}}
+\newcommand{\ttt}{\mathsfit{t}}
+\newcommand{\tol}{\varepsilon}
+\newcommand{\bt}{\mathbf{t}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\dd}{\mathbf{d}}
+\newcommand{\ii}{\mathbf{i}}
+\newcommand{\jj}{\mathbf{j}}
+\newcommand{\xx}{\mathbf{x}}
+\renewcommand{\pp}{\mathbf{p}}
+\renewcommand{\ggg}{\mathbf{g}}
+\newcommand{\GG}{\mathbf{G}}
+\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\iid}{\text{i.i.d.}}
+\newcommand{\integer}{\textrm{I}}
+\newcommand{\octave}{\mbox{GNU Octave}\xspace}
+\newcommand{\gradp}{\nabla_{\!\sss{P_k}}}
+
+% mathlcal font
+\DeclareFontFamily{U}{dutchcal}{\skewchar\font=45 }
+\DeclareFontShape{U}{dutchcal}{m}{n}{<-> s*[1.0] dutchcal-r}{}
+\DeclareFontShape{U}{dutchcal}{b}{n}{<-> s*[1.0] dutchcal-b}{}
+\DeclareMathAlphabet{\mathlcal}{U}{dutchcal}{m}{n}
+\SetMathAlphabet{\mathlcal}{bold}{U}{dutchcal}{b}{n}
+
+% mathscr font (supporting lowercase letters)
+%\usepackage[scr=dutchcal]{mathalfa}
+%\usepackage[scr=esstix]{mathalfa}
+%\usepackage[scr=boondox]{mathalfa}
+%\usepackage[scr=boondoxo]{mathalfa}
+\usepackage[scr=boondoxupr]{mathalfa}
+%\newcommand{\model}{\mathscr{h}}
+\newcommand{\model}{\tilde{f}}
+\newcommand{\rmod}{F}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\TT}{\mathbf{T}}
+
+
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\vol}{vol}
+\newcommand{\Set}[1]{\mathcal{#1}}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it} % The mathpzc font
+\newcommand{\slv}{\mathpzc} 
+% mathpzc looks great, but it stops working on 19 Feb 2020 for no reason. 
+%\newcommand{\slv}{\mathscr}
+\newcommand{\software}{\texttt}
+\DeclareMathOperator{\eff}{\mathsf{e}\;\!}
+\DeclareMathOperator{\Eff}{\mathsf{E}\;\!}
+\newcommand{\out}{{\text{out}}}
+
+%\numberwithin{equation}{section}
+\setcounter{tocdepth}{2}
+
+\DeclareMathOperator{\comp}{C}
+\DeclareMathOperator{\sign}{sign}
+
+\newcommand{\REPHRASE}[1]{{\color{blue}{#1}}}
+\newcommand{\TYPO}[1]{{\color{orange}{#1}}}
+\newcommand{\MISTAKE}[1]{{\color{violet}{#1}}}
+\newcommand{\REVISION}[1]{{\color{blue}{#1}}}
+\newcommand{\REVISIONred}[1]{{\color{red}{#1}}}
+%\newcommand{\COMMENT}[1]{\textcolor{darkgreen}{(#1)}}
+%\newcommand{\REVISION}[1]{#1}
+%\newcommand{\REVISIONred}[1]{#1}
+  
+
+\newcommand{\lims}{\mathcal{L}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Notes on Singular Value Decomposition}
+\date{February 20, 2020 (revised on \today)}
+\author{
+Z. Zhang
+\thanks{
+Department of Applied Mathematics, The Hong Kong Polytechnic University, 
+Hong Kong, China ({\tt zaikun.zhang@polyu.edu.hk}).
+}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  We collect a few elementary facts about the singular value decomposition (SVD) of matrices. In
+  particular, we present three approaches used by different authors in the history 
+  to establish the existence of~SVD.
+\end{abstract}
+
+\textbf{Notation}. Throughout the document,~$\|\cdot\|$ stands for the $2$-norm for vectors and matrices. 
+In inline equations, we use the MATLAB-style notation~$[a; b]$ to denote the vertical array 
+with~$a$ and~$b$ being its entries. 
+
+\section{Eigenvalue decomposition}
+
+\begin{theorem}
+  \label{th:evd}
+  Given any Hermitian matrix~$A\in \CC^{n\times n}$, there exists a unitary matrix~$U\in
+  \CC^{n\times n}$ and a diagonal matrix~$\Lambda \in \real^{n\times n}$ such that 
+  \begin{equation*}
+    A \; = \; U\Lambda U^\hmt.
+  \end{equation*}
+  If~$A$ is real, then we can require that~$U$ is real.
+  Indeed,~$\Lambda_{1,1}$, $\dots$, $\Lambda_{n,n}$ are the eigenvalues of~$A$, multiplicity
+  included, and the~$j$-th column of~$U$ is an eigenvector of~$A$ associated with~$\Lambda_{j,j}$.
+\end{theorem}
+
+\begin{definition}
+  \label{def:evd}
+  Let~$A\in \CC^{n\times n}$ be an Hermitian matrix. 
+  \begin{enumerate}[leftmargin=1.5em]
+    \item 
+      $U\Lambda U^\hmt$ is called an eigenvalue decomposition of~$A$, if~$A = U \Lambda U^\hmt$, $U
+      \in \CC^{n\times n}$ is a unitary matrix, and~$\Lambda \in \real^{n\times n}$ is a diagonal
+      matrix.
+    \item 
+      $U\Lambda U^\hmt$ is called a compact eigenvalue decomposition of~$A$,
+      if~$A = U \Lambda U^\hmt$, $U \in \CC^{n\times r}$ is a matrix with~$U^\hmt U = I_r$,
+      and~$\Lambda \in \real^{r\times r}$ is a diagonal matrix whose diagonal entries are nonzero.
+  \end{enumerate}
+\end{definition}
+
+%\begin{remark}
+%  If~$U \Lambda U^\hmt$ is a compact eigenvalue decomposition of an Hermitian matrix~$A \in \CC^{n\times n}$, 
+%  then~$U$ has~$r=\rank(A)$ columns. Such a decomposition can be extended to an eigenvalue
+%  decomposition
+%  \begin{equation*}
+%    (U \; \tilde{U}) 
+%    \begin{pmatrix}
+%      \Lambda & 0\\
+%      0 & 0
+%    \end{pmatrix}
+%    \begin{pmatrix}
+%      U^\hmt\\
+%      \tilde{U}^\hmt 
+%    \end{pmatrix},
+%  \end{equation*}
+%  where~$\tilde{U}\in \CC^{n\times(n-r)}$ is any matrix such that~$(U \; \tilde{U})$ is unitary.
+%\end{remark}
+
+\section{Singular value decomposition (SVD)}
+
+\begin{definition}
+  \label{def:svd}
+  Let~$A\in \CC^{m\times n}$ be a matrix with~$\rank(A) = r$.
+  \begin{enumerate}[leftmargin=1.5em]
+    \item 
+      $U\Sigma V^\hmt$ is called an singular value decomposition of~$A$, 
+      provided that~$A = U \Sigma V^\hmt$, $U
+      \in \CC^{m\times m}$ and~$V\in\CC^{n\times n}$ are unitary matrices, and~$\Sigma \in
+      \real^{m\times n}$ is a matrix whose first~$r$ diagonal entries~(if~$r\ge 1$) are positive
+      while all the other entries are zero.
+    \item 
+      When~$r \ge 1$, $U\Sigma U^\hmt$ is called a compact (or \emph{reduced}) singular value decomposition of~$A$,
+      provided that~$A = U \Sigma V^\hmt$, $U \in \CC^{m\times r}$ and~$V\in \CC^{n\times r}$ are matrices
+      with~$U^\hmt U = V^\hmt V = I_r$,
+      and~$\Sigma \in \real^{r\times r}$ is a diagonal matrix whose diagonal entries are positive.
+  \end{enumerate}
+\end{definition}
+
+\begin{remark}
+  Let~$U\Sigma V^\hmt$ be a singular value decomposition of~$A$ and $\sigma_i = \Sigma_{i,i}$ \textnormal{(}$1\le i\le
+  \min\{m,n\}$\textnormal{)}. Then~\mbox{$\sigma_1$, $\dots$, $\sigma_r$} are called the
+  \textnormal{(}nonzero\textnormal{)} singular values of~$A$. It is often convenient to 
+  regard $\sigma_{r+1}=\cdots=\sigma_{\min\{m,n\}} = 0$ also as singular values of~$A$.
+\end{remark}
+
+\begin{remark}
+If~$U\Sigma V^\hmt$ is a \textnormal{(}compact\textnormal{)} singular value decomposition 
+of~$A$, then~$AV = U\Sigma$ and~$A^\hmt U = V\Sigma$.
+Let~$\sigma_i=\Sigma_{i,i}$, $u_i$ be the~$i$-th column of~$U$, 
+and~$v_i$ be the~$i$-th column of~$V$. 
+Then~$A v_i = \sigma_i u_i$ and~$A^\hmt u_i = \sigma_i v_i$; $u_i$ and~$v_i$ 
+are called a pair of left and right singular vectors of~$A$ associated with the 
+singular value~$\sigma_{i}$. 
+\end{remark}
+
+\begin{remark}
+  If~$U \Sigma V^\hmt$ is a compact singular value decomposition of~$A \in \CC^{m\times n}$, 
+  then we can extend it to a singular value decomposition
+  \begin{equation*}
+    (U \; \tilde{U}) 
+    \begin{pmatrix}
+      \Sigma & 0\\
+      0 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+      V^\hmt\\
+      \tilde{V}^\hmt 
+    \end{pmatrix},
+  \end{equation*}
+  where~$\tilde{U}\in \CC^{m\times(m-r)}$ is any matrix such that~$(U \; \tilde{U})$ is unitary,
+  and~$\tilde{V} \in \CC^{n\times (n-r)}$ is any matrix such that~$(V \; \tilde{V})$ is unitary.
+  Conversely, if~$U\Sigma V^\hmt$ is a singular value decomposition of~$A\neq 0$, we can obtain a compact
+  singular value decomposition by dropping the zero diagonal entries of~$\Sigma$ and the
+  corresponding columns of~$U$ and~$V$. 
+\end{remark}
+
+\subsection{Uniqueness of (compact) SVD}
+
+\begin{theorem}
+ Let~$U\Sigma V^\hmt$ be a compact singular value decomposition of a matrix~$A$.
+ \begin{enumerate}[leftmargin=1.5em]
+   \item $U\Sigma^2 U^\hmt$ is a compact eigenvalue decomposition of~$AA^\hmt$, 
+     and hence the diagonal entries of~$\Sigma^2$ are the positive eigenvalues of~$AA^\hmt$, multiplicity included. 
+   \item $V\Sigma^2 V^\hmt$ is a compact eigenvalue decomposition of~$A^\hmt A$,
+     and hence the diagonal entries of~$\Sigma^2$ are the positive eigenvalues of~$A^\hmt A$, multiplicity included. 
+ \end{enumerate}
+\end{theorem}
+
+\begin{lemma}
+  \label{lem:commute}
+  Consider matrices~$A \in \CC^{n\times n}$ and $\Lambda \in \CC^{n\times n}$ with~$\Lambda$ being diagonal.
+  \begin{enumerate}[leftmargin=1.5em]
+  \item $\Lambda A = A\Lambda$ if and only if~$A_{i,j} = 0$ for any~$i$ and~$j$ such that~$\Lambda_{i,i}\neq \Lambda_{j,j}$.
+  \item If~$\Lambda$ is nonnegative and~$\Lambda A = A\Lambda$, then~$\Lambda^p A = A \Lambda^p$ for
+    any~$p\ge 0$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof} This is because
+$\Lambda A = A \Lambda$ if and only if 
+$\Lambda_{i,i} A_{i,j} = A_{i,j} \Lambda_{j,j}$ for any $i,j\in\{1, \dots, n\}$.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:unitary}
+  Let~$U_1\in\CC^{n \times r}\!$ and~$U_2 \in \CC^{n\times r}\!$ satisfy~$U_1^\hmt U_1 = U_2^\hmt U_2
+  = I_r$ and~$\range(U_1) = \range(U_2)$.
+  \begin{enumerate}[leftmargin=1.5em]
+    \item $U_1U_1^\hmt = U_2U_2^\hmt$, both being the orthogonal projection onto~$\range(U_1)
+      = \range(U_2)$.
+    \item $W=U_1^\hmt U_2$ is a unitary matrix and~$U_1W = U_2$. 
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  $U_1^\hmt U_1 = I_r$ ensures that~$U_1U_1^\hmt$ is the orthogonal projection onto~$\range(U_1)
+  = \range(U_2)$ (see, \eg, \cite{Han_Neumann_2013}). In addition,
+ $U_1 W = U_1 U_1^\hmt U_2 = U_2$, and $W^\hmt W = U_2^\hmt U_1 W = U_2^\hmt U_2 = I_r$. 
+\end{proof}
+
+
+\begin{theorem}
+  \label{th:svdunique}
+  Let~$U_i\in \CC^{m\times r}$ and $V_i\in \CC^{n\times r}$ satisfy~$U_i^\hmt
+  U_i=V_i^{\hmt} V_i = I_r$ \textnormal{(}$i=1,2$\textnormal{)}, and 
+  $\Sigma \in \CC^{r\times r}$ be a diagonal matrix whose diagonal entries are positive. 
+  Then~$U_1 \Sigma V_1^{\hmt} = U_2 \Sigma V_2^{\hmt}$ if and only if there exists
+  a unitary matrix~$W\in\CC^{r\times r}$ such that~$U_2=U_1 W$, $V_2 = V_1 W$, and~$\Sigma
+  W = W\Sigma$.
+\end{theorem}
+
+\begin{proof}
+The~``if'' part is trivial, so we focus on the ``only if'' part.
+Assuming~$U_1\Sigma V_1^\hmt = U_2\Sigma V_2^\hmt$,
+We will show that~$W = U_1^\hmt U_2\in \CC^{r\times r}$ fulfills all the desired requirements.
+Observe that both~$\Sigma V_1^\hmt$ and~$\Sigma V_2^\hmt$ have full column rank. Hence
+\begin{equation*}
+  \range(U_1) \;=\; \range(U_1\Sigma V_1^\hmt) 
+  \;=\; \range(U_2\Sigma V_2^\hmt) \;=\; \range(U_2).
+\end{equation*}
+By Lemma~\ref{lem:unitary},~$W$ is a unitary matrix and~$U_1W = U_2$. 
+It remains to show that~$\Sigma W = W\Sigma$ and~$V_2 = WV_1$. 
+Recalling that~$V_1^\hmt V_1 = V_2^\hmt V_2= I_r$, we have
+\begin{equation}
+  %\label{eq:us2u}
+  \nonumber
+  U_1\Sigma^2 U_1^\hmt 
+  \;=\; (U_1\Sigma V_1^\hmt) (U_1 \Sigma V_1^\hmt)^\hmt 
+  \;=\; (U_2\Sigma V_2^\hmt) (U_2 \Sigma V_2^\hmt)^\hmt 
+  \;=\; U_2\Sigma^2 U_2^\hmt. 
+\end{equation}
+Hence
+\begin{equation*}
+  \Sigma^2W 
+  \;=\;\Sigma^2U_1^\hmt U_2 
+  \;=\; U_1^\hmt(U_1 \Sigma^2 U_1^\hmt) U_2
+  \;=\; U_1^\hmt(U_2 \Sigma^2 U_2^\hmt) U_2
+  \;=\; U_1^\hmt U_2 \Sigma^2 
+  \;=\; W\Sigma^2 
+\end{equation*}
+Thus~$\Sigma W=W\Sigma$ by Lemma~\ref{lem:commute}. 
+Finally, since~$V_1 \Sigma U_1^\hmt =(U_1\Sigma V_1^\hmt)^\hmt = (U_2\Sigma V_2^\hmt)^\hmt= V_2 \Sigma
+U_2^\hmt$, 
+\begin{equation*}
+  V_2
+  \;=\;(V_2\Sigma U_2^\hmt)(U_2 \Sigma^{-1}) 
+  \;=\;(V_1\Sigma U_1^\hmt)(U_2 \Sigma^{-1}) 
+  \;=\; V_1 \Sigma W \Sigma^{-1}
+  \;=\; V_1 W \Sigma \Sigma^{-1}
+  \;=\; V_1W.
+\end{equation*}
+The proof is complete.
+\end{proof}
+
+
+\subsection{Existence of SVD}
+
+\subsubsection{Jordan's deflation approach~\cite{Jordan_1874}}
+
+\begin{lemma}
+  \label{lem:jordan}
+  Given a nonzero matrix~$A\in\CC^{m\times n}$, let~$(u,v)\in \CC^{m}\times \CC^{n}$ be a solution of 
+  \begin{equation}
+    \nonumber
+    %\label{eq:jordan}
+    \max \{\Re(x^\hmt A y) \mathrel{:} \|x\|=\|y\|=1, \; x \in \CC^{m}, \; y\in\CC^{n}\},
+  \end{equation}
+  and~${\sigma} = \Re(u^\hmt Av)$. Then~$Av = \sigma u$,~$A^\hmt u
+  = \sigma v$, and~$\sigma>0$. 
+\end{lemma}
+
+\begin{proof}
+  Since~$A\neq 0$, it is obvious that~$\sigma >0$. Hence~$Av \neq 0$. By assumption,~
+  \begin{equation*}
+    \Re(u^\hmt Av)\ge \Re(\left({Av}/{\|Av\|}\right)^\hmt Av) \;=\;
+    \|Av\|\;=\;\|u\|\|Av\|.
+  \end{equation*}
+  By the Cauchy-Schwarz inequality, there exists a scalar~$\lambda>0$ such
+  that~$\lambda u = Av$. Hence%
+  \begin{equation*}
+    \sigma \;=\; \Re(u^\hmt Av) \;=\; \Re(\lambda \|x\|^2) \;=\; \lambda.  
+  \end{equation*}
+  Thus~$Av = \sigma u$. Similarly, we can prove~$A^\hmt u = \sigma v$ using the fact that
+  \begin{equation*}
+    \Re(u^\hmt A v)\;\ge\; \Re(u^\hmt A\left( A^\hmt u/\|A^\hmt
+    u\|\right)) \;=\; \|A^\hmt x\| = \|A^\hmt u\|\|v\|.
+  \end{equation*}
+\end{proof}
+
+\begin{remark}
+  Indeed, the~$\sigma$ in Lemma~\ref{lem:jordan} is the largest singular value of~$A$, because
+  \begin{equation*}
+    \max_{\|x\|=\|y\|=1} \Re(x^\hmt A y) \;=\; \max_{\|y\|=1}\max_{\|x\|=1}\Re(x^\hmt Ay)
+    \;=\;\max_{\|y\|=1}\|Ay\| \;=\; \|A\|\;=\;\sigma_{\max}(A).
+  \end{equation*}
+  Similarly, we can see that
+  \begin{equation*}
+    \max_{\|x\|=\|y\|=1}|x^\hmt A y| \;=\; \sigma_{\max}(A).
+  \end{equation*}
+  See~\cite{Cao_Feng_2003} for more about variational representations for singular values of matrices.
+\end{remark}
+
+\begin{remark}
+  When Lemma~\ref{lem:jordan} is applied in the proof of Theorem~\ref{th:svd} later, we only need
+  the existence of unit vectors~$u\in\CC^{m}$, $v\in\CC^{n}$, and a scalar~$\sigma>0$
+  such that~$Av = \sigma u$ and~$A^\hmt u = \sigma v$. The existence can be established in other
+  ways. 
+  \begin{enumerate}[leftmargin=1.5em]
+    \item Let~$\sigma = (\lambda_{\max}(AA^\hmt))^{\frac{1}{2}}>0$, $u\in\CC^{m\times m}$ be an eigenvector
+      of~$AA^\hmt$ associated with~$\lambda_{\max}(AA^\hmt)$, and~$v\;=\;A^\hmt u/\sigma$.
+      Then~$Av = AA^\hmt u/\sigma = \sigma^2 u/\sigma=\sigma u$, and~$A^\hmt u = \sigma v$.   
+      This is the approach used 
+      in the proofs of~\cite[Theorem~4.1]{Trefethen_Bau_1997} and~\cite[Theorem~1]{Koranyi_2001}.
+    \item Let~$\sigma = \lambda_{\max}(J) >0$ with~$J$ being the Jordan-Wielandt form of~$A$
+      \textnormal{(}see~\eqref{eq:JW}\textnormal{)}, $w\in\CC^{m+n}$ be an eigenvector associated with~$\sigma$, 
+      $x\in\CC^{m}$ consist of the first~$m$ entries of~$w$, and~$y\in\CC^{n}$ consist of the
+      last~$n$. Then we can verify that~$Ay=\sigma x$ and~$A^\hmt x=\sigma y$.
+      Meanwhile, $A(-y) = -\sigma x$, and~$A^\hmt x = -\sigma (-y)$, making~$[x; -y]$ 
+      an eigenvector of~$J$ associated with~$-\sigma \neq \sigma$. Since eigenvectors for
+    different eigenvalues are orthogonal, we have~$x^\hmt x - y^\hmt y= 0$. Thus~$\|x\|=\|y\|$,
+    which are nonzero since~$w\neq 0$. Finally, let~$u = x/\|x\|$ and~$y = y/\|y\|$. 
+  \end{enumerate}
+\end{remark}
+
+\begin{theorem}
+  \label{th:svd}
+  Any~$A\in\CC^{m\times n}$ has a singular value decomposition~$U\Sigma V^\hmt$
+  as defined in Definition~\ref{def:svd}. 
+\end{theorem}
+
+\begin{proof}
+  Assume without loss of generality that~$A\neq 0$. We prove by an induction on~$\min\{m,n\}$.
+
+  1.~If~$\min\{m, n\} = 1$, then~$A$ is either a row or a column. If~$A$ is a column, let
+  $U$ be a unitary matrix whose first column is~$A/\|A\|$, $\Sigma = e_1$ (\ie, the first canonical
+  coordinate vector), and~$V = \|A\|$. Then~$U\Sigma V^\hmt$ is a singular value decomposition
+  of~$A$. If~$A$ is a row, the decomposition can be found similarly.
+
+  2.~Assume that the conclusion holds when~$\min\{m,n\}= k$. Let us consider the scenario where 
+  $\min\{m,n\} = k+1$. Let~$A$ be a matrix in~$\CC^{m\times n}$. 
+  %Without loss of generality, suppose that~$A\neq0$.
+  By Lemma~\ref{lem:jordan},
+  there exist unit vectors~$u\in\CC^{m}$, $v\in\CC^{n}$, and a scalar~$\sigma>0$ such that 
+  \begin{equation}
+    \label{eq:jordan}
+    Av \;=\; \sigma u, \quad A^\hmt u\;=\;\sigma v.
+  \end{equation}
+  Let~$U\in \CC^{m\times m}$ be a unitary matrix whose fist column is~$u$, and~$V\in\CC^{n\times n}$
+  be a unitary matrix whose first column is~$v$. It is then straightforward to check that
+  \begin{equation}
+    \label{eq:aind1}
+    U^\hmt A V \;=\; 
+    \begin{pmatrix}
+      \sigma & 0\\
+      0 & \hat{A}
+    \end{pmatrix},
+  \end{equation}
+  where~$\hat{A}$ is a matrix in~$\CC^{(m-1)\times (n-1)}$. If~$\hat{A} = 0$, then~\eqref{eq:aind1} 
+  provides a singular value decomposition for~$A$. 
+  Otherwise, since~$\min\{m-1, n-1\} = \min\{m,n\}-1$, we
+  know from the induction hypothesis that~$\hat{A}$ has a singular value
+  decomposition~$\hat{U}\hat{\Sigma} \hat{V}^\hmt$. Consequently, 
+  \begin{equation}
+    \label{eq:aind2}
+    A \;=\; U (U^\hmt A V)V^\hmt 
+    \;=\; 
+    U 
+    \begin{pmatrix}
+    \sigma & 0\\
+    0 & \hat{U}\hat{\Sigma} \hat{V}^\hmt
+    \end{pmatrix}
+    V^\hmt
+  \;=\; 
+    \left[
+  U 
+  \begin{pmatrix}
+    1 & 0\\
+    0 & \hat{U}
+  \end{pmatrix}
+\right]
+  \begin{pmatrix}
+    \sigma & 0\\
+    0 & \hat{\Sigma}
+  \end{pmatrix}
+  \left[
+  \begin{pmatrix}
+    1 & 0\\
+    0 & \hat{V}
+  \end{pmatrix}^{\!\hmt}
+  \,V^\hmt
+\right].
+  \end{equation}
+  It is easy to verify that the right-hand side of~\eqref{eq:aind2} provides a singular value
+  decomposition for~$A$. This completes the induction.
+\end{proof}
+
+\begin{remark}
+  We can also prove Theorem~\ref{th:svd} by an induction on~$\rank(A)$. When~$\rank(A) = 0$, 
+  the desired conclusion is trivial. Assume that the conclusion holds when~$\rank(A) \le k$. Let us consider
+  the scenario with~$\rank(A) = k+1$. By Lemma~\ref{lem:jordan}, there exists unit
+  vectors~$u\in\CC^{m}$, $v\in\CC^{n}$, and a scalar ~$\sigma>0$ fulfilling~\eqref{eq:jordan}.
+  Define~$\hat{A} = A-\sigma uv^\hmt$. Then it is easy to check that~$\ker(A)\subset
+  \ker(\hat{A})$ and~$v\in\ker(\hat{A})$. Since~$v\in\range(A^\hmt)\perp \ker(A)$, we know
+  that~$\dim\ker(\hat{A})\ge \dim\ker(A)+1$. Thus~$\rank(\hat{A}) \le \rank(A)-1$.
+  If~$\hat{A} = 0$, then we are done. Otherwise, by the induction
+  hypothesis,~$\hat{A}$ has a compact singular value decomposition~$\hat{U}\hat{\Sigma}\hat{V}^\hmt$. 
+  Consequently, 
+  \begin{equation}
+    \label{eq:aind3}
+    A\;=\; \sigma uv^\hmt + \hat{A} \;=\;
+    \sigma uv^\hmt + \hat{U}\hat{\Sigma} \hat{V}^\hmt \;=\;
+      (u\,\; \hat{U}) 
+    \begin{pmatrix}
+      \sigma & 0\\
+      0 &\hat{\Sigma} 
+    \end{pmatrix}
+    (v\,\; \hat{V})^\hmt.
+  \end{equation}
+  Noting that~$\hat{A}v = 0$, $\hat{A}^\hmt u = 0$, and~$\hat{\Sigma}$ is nonsingular, we can see
+  that~$\hat{V}^\hmt v = 0$ and~$\hat{U}^\hmt u  = 0$. Thus the columns of~$(u\,\;\hat{U})$ are
+  orthonormal, and so are those of~$(v\,\; \hat{V})$. Hence~\eqref{eq:aind3} provides a compact
+  singular value decomposition for~$A$, which can be extended to a singular value decomposition. The
+  induction is complete. 
+\end{remark}
+
+
+\subsubsection{The Eckart-Young approach~\cite{Eckart_Young_1939}}
+
+\begin{lemma}
+  \label{lem:fro2}
+  Suppose that~$A \in \CC^{m\times n}$ and~$B \in \CC^{n\times k}$.
+  \begin{enumerate}[leftmargin=1.5em]
+    \item $\|AB\|_\fro \le \|A\| \|B\|_\fro$, and the equality holds if and only if~$A^\hmt A B = \|A\|^2 B$. 
+    \item $\|AB\|_\fro \le \|A\|_\fro\|B\|$, and the equality holds if and only if~$ABB^\hmt = \|B\|^2 A$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{remark}
+  Recall that~$\|\cdot\|$ denotes the~$2$-norm for matrices.
+\end{remark}
+
+\begin{proof}
+  Let~$C\in\CC^{n\times n}$ be the square root of the 
+  positive semidefinite matrix~$\|A\|^2 I_n - A^\hmt A$.~Then%
+  \begin{equation*}
+  \|A\|^2\|B\|_\fro^2 - \|AB\|_\fro^2 \;=\; \tr(\|A\|^2 B^\hmt B) - \tr(B^\hmt A^\hmt A B)\;=\; \tr(B^\hmt C^2 B)\;\ge\; 0.
+  \end{equation*}
+  Thus~$\|AB\|_\fro \le \|A\|\|B\|_\fro$, and 
+  \begin{equation*}
+    \|AB\|_\fro = \|A\|\|B\|_\fro 
+    \;\Longleftrightarrow \; B^\hmt C^2 B =0 
+    \;\Longleftrightarrow \; C^2 B =0 
+    \;\Longleftrightarrow \; A^\hmt A B = \|A\|^2 B. 
+  \end{equation*}
+  The proof concerning~$\|AB\|_\fro \le \|A\|_\fro\|B\|$ is similar.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:uav}
+  Let~$A$, $B$, $U$, and~$V$ be complex matrices of proper sizes so that both~$U^\hmt AV$
+  and~$UBV^\hmt$ are well defined.
+  Suppose that~$\|A\|_\fro=\|B\|_\fro$ and~$\|U\|=\|V\|=1$, then $A = UBV^\hmt$ if and only if
+  $B = U^\hmt A V$.
+\end{lemma}
+
+\begin{proof}
+  Assume that~$A = UBV^\hmt$. Since~$\|U\|=\|V\|=1$ and~$\|A\|_\fro=\|B\|_\fro$, we have
+ \begin{equation*}
+   \min\{\|UB\|_\fro,\; \|BV^\hmt\|_\fro\}\;\ge\;\|UBV^\hmt\|_\fro\;=\;\|A\|_\fro = \|B\|_\fro.
+ \end{equation*}
+ Hence Lemma~\ref{lem:fro2} ensures
+ \begin{equation*}
+   U^\hmt U B \;=\; B, \quad BV^\hmt V \;=\; B.
+ \end{equation*}
+ Therefore,
+ \begin{equation*}
+   U^\hmt A V \;=\; U^\hmt U B V^\hmt V \;=\; B V^\hmt V \;=\; B.
+ \end{equation*}
+ In the same way, $B=U^\hmt A V$ implies~$A = UBV^\hmt$. 
+\end{proof}
+
+
+\begin{theorem}
+  \label{th:ey}
+  Let~$A \in \CC^{m\times n}$ be a matrix.
+  \begin{enumerate}[leftmargin=1.5em]
+  \item If~$V\Lambda V^\hmt$ is a compact eigenvalue decomposition of~$A^\hmt A$ and~$U = AV\Lambda^{-\frac{1}{2}}$, 
+    then~$U\Lambda^\frac{1}{2} V^\hmt$ is a compact singular value decomposition of~$A$. 
+  \item If~$U\Lambda U^\hmt$ is a compact eigenvalue decomposition of~$AA^\hmt$ and~$V = A^\hmt U\Lambda^{-\frac{1}{2}}$, 
+    then~$U\Lambda^\frac{1}{2} V^\hmt$ is a compact singular value decomposition of~$A$. 
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  We only prove 1. By assumption,~$V^\hmt V=I$,~$A^\hmt A = V\Lambda V^\hmt$, 
+  and~$U = A V\Lambda^{-\frac{1}{2}}$. Hence
+  \begin{equation}
+    \label{eq:uhu}
+    U^\hmt U \;=\;  (A V\Lambda^{-\frac{1}{2}})^\hmt  (AV\Lambda^{-\frac{1}{2}}) 
+    \;=\; \Lambda^{-\frac{1}{2}}(V^\hmt A^\hmt A V)\Lambda^{-\frac{1}{2}}
+    \;=\; \Lambda^{-\frac{1}{2}}\Lambda\Lambda^{-\frac{1}{2}} \;=\; I.
+  \end{equation}
+  Thus 
+  \begin{equation*}
+    U^\hmt A V \;=\; U^\hmt (U\Lambda^{\frac{1}{2}}) \;=\; \Lambda^{\frac{1}{2}}. 
+  \end{equation*}
+  Meanwhile, $\|U\|=1$ by~\eqref{eq:uhu}, $\|V\|=1$ because~$V^\hmt V = I$, and
+  \begin{equation*}
+    \|A\|_\fro^2 \;=\; \tr(A^\hmt A) \;=\; \tr(\Lambda) \;=\; \|\Lambda^{\frac{1}{2}}\|_\fro^2.
+  \end{equation*}
+  Therefore, Lemma~\ref{lem:uav} ensures
+  \begin{equation}
+    \nonumber
+    %\label{eq:Adec}
+    A \;=\; U\Lambda^{\frac{1}{2}}V^\hmt.
+  \end{equation}
+  Hence~$U\Lambda^{\frac{1}{2}}V^\hmt$ is a compact singular value decomposition of~$A$. 
+\end{proof}
+
+\begin{theorem}
+  \label{th:eyfull}
+  Let~$A \in \CC^{m\times n}$ be a matrix.
+  \begin{enumerate}[leftmargin=1.5em]
+    \item If~$V\Lambda V^\hmt$ is an eigenvalue decomposition of~$A^\hmt A$ such
+      that the diagonal entries of~$\Lambda$ are descending. The there exist~$U\in \CC^{m\times m}$
+      and~$\Sigma \in \real^{m\times n}$ such that~$U\Sigma V^\hmt$ is a singular value decomposition of~$A$.
+    \item If~$U\Lambda U^\hmt$ is an eigenvalue decomposition of~$AA^\hmt$ such
+      that the diagonal entries of~$\Lambda$ are descending. The there exist~$V\in \CC^{n\times n}$
+      and~$\Sigma \in \real^{m\times n}$ such that~$U\Sigma V^\hmt$ is a singular value decomposition of~$A$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  We only prove 1. Suppose that~$\rank(A) = r$. Let~$\hat{\Lambda} = \diag(\Lambda_{1,1}, \dots,
+  \Lambda_{r,r})$ and~$\hat{V}$ be the first~$r$ columns of~$V$. Then~$\hat{V} \hat{\Lambda}
+  \hat{V}^\hmt$ is a compact eigenvalue decomposition of~$A^\hmt A$. With~$\hat{U}
+  = A\hat{V}\hat{\Lambda}^{-\frac{1}{2}}$, we know that~$\hat{U}\hat{\Lambda}^{\frac{1}{2}}\hat{V}^\hmt$ is 
+  a compact singular value decomposition of~$A$. 
+  Let~$\tilde{U}\in \CC^{m\times(m-r)}$ be any matrix such that~$(\hat{U}\; \tilde{U})$ is
+  unitary. Then
+  \begin{equation*}
+    (\hat{U}\; \tilde{U})
+    \begin{pmatrix}
+      \hat{\Lambda}^{\frac{1}{2}} & 0\\
+      0 & 0
+    \end{pmatrix}
+    V^\hmt
+  \end{equation*}
+  is a singular value decomposition of~$A$.
+\end{proof}
+
+\subsubsection{The Wielandt-Lanczos approach~\cite{Lanczos_1958}}
+
+\begin{lemma}
+  \label{lem:lanczos}
+  Given a matrix~$A \in \CC^{m\times n}$, define its Jordan-Wielandt form~\cite{Mathias_2013}
+\begin{equation}
+  \label{eq:JW}
+  J = 
+  \begin{pmatrix}
+    0 & A \\
+    A^\hmt & 0
+  \end{pmatrix}.
+\end{equation}
+ Then the characteristic polynomial of~$J$ is
+    \begin{equation}
+      \label{eq:chp}
+      p(\sigma) \;=\; \sigma^{m-n}\det(\sigma^2 I_n - A^\hmt A) \;=\; \sigma^{n-m}\det(\sigma^2 I_m
+      - A A^\hmt). 
+    \end{equation}
+    If the nonzero eigenvalues of~$AA^\hmt$ \textnormal{(}i.e., those of~$A^\hmt A$\textnormal{)}
+    are~$\lambda_1$, $\dots$, $\lambda_r$, multiplicity included, then
+    the nonzero eigenvalues of~$J$ are~$\sqrt{\lambda_1}$, $-\sqrt{\lambda_1}$, $\dots$, $\sqrt{\lambda_r}$,
+    $-\sqrt{\lambda_r}$, multiplicity included.
+%\begin{enumerate}
+%  \item 
+%    The characteristic polynomial of~$J$ is
+%    \begin{equation}
+%      \label{eq:eig}
+%      p(\sigma) \;=\; \sigma^{m-n}\det(\sigma^2 I_n - A^\hmt A) \;=\; \sigma^{n-m}\det(\sigma^2 I_m
+%      - A A^\hmt). 
+%    \end{equation}
+%    If the nonzero eigenvalues of~$AA^\hmt$ (i.e., those of~$A^\hmt A$) are~$\lambda_1 \ge \cdots \ge \lambda_r > 0$, then
+%    the nonzero eigenvalues of~$J$ are~$\sqrt{\lambda_1}$, $-\sqrt{\lambda_1}$, $\dots$, $\sqrt{\lambda_r}$,
+%    $-\sqrt{\lambda_r}$, multiplicity included. 
+%  \item The eigenspace of~$J$ associated with an eigenvalue~$\sigma$ is 
+%    \begin{equation}
+%      \label{eq:eigs}
+%      \{[u; v]\in\CC^{m+n} \mathrel{:} A^\hmt u = \sigma v, Av = \sigma u, u\in \CC^{m}, v\in
+%    \CC^n\}.
+%    \end{equation}
+%     If~$\sigma \neq 0$, then the eigenspace can be further specified as 
+%    \begin{equation*}
+%      \left\{ [u; A^\hmt u/\sigma] \mathrel{:} A A^\hmt u = \sigma^2 u, u\in \CC^{m} \right\}
+%      \;=\; 
+%      \left\{ [Av/\sigma; v] \mathrel{:} A^\hmt A v = \sigma^2 v, v\in \CC^{n} \right\}; 
+%    \end{equation*}
+%    if~$\sigma = 0$, then it is 
+%    \begin{equation*}
+%      \left\{ [u; v] \mathrel{:} A^\hmt u  = 0, A v = 0 \right\} \;=\; \ker(A^\hmt) \times \ker(A).
+%    \end{equation*}
+%  \item If~$U\Lambda U^\hmt$ is a compact eigenvalue decomposition of~$AA^\hmt$ and~$V = A^\hmt U\Lambda^{-\frac{1}{2}}$, 
+%    or~$V\Lambda V^\hmt$ is a compact eigenvalue decomposition of~$A^\hmt A$ and~$U = A U\Lambda^{-\frac{1}{2}}$, 
+%    then
+%    \begin{equation*}
+%      \left[
+%      \frac{1}{\sqrt{2}}
+%      \begin{pmatrix}
+%        U & -U\\
+%        V & V 
+%      \end{pmatrix}
+%    \right]
+%      \begin{pmatrix}
+%        \Lambda^{\frac{1}{2}} & 0\\
+%        0 & -\Lambda^{\frac{1}{2}} 
+%      \end{pmatrix}
+%      \left[
+%      \frac{1}{\sqrt{2}}
+%      \begin{pmatrix}
+%        U^\hmt & V^\hmt\\
+%        -U^\hmt & V^\hmt 
+%      \end{pmatrix}
+%    \right]
+%    \end{equation*}
+%    is a compact eigenvalue decomposition of~$J$. Consequently, $U\Lambda^{\frac{1}{2}} V^\hmt$ is
+%    a compact singular value decomposition of~$A$.
+%\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  We only prove the first equality in~\eqref{eq:chp}. For any~$\sigma \neq 0$,
+  \begin{equation*}
+    \begin{pmatrix}
+      I_m & 0 \\
+      \sigma^{-1}A^\hmt & I_n 
+    \end{pmatrix}
+    \begin{pmatrix}
+      \sigma I_m & -A \\
+      -A^\hmt & \sigma I_n
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \sigma I_m & -A\\
+      0 & \sigma I_n - \sigma^{-1}A^\hmt A 
+    \end{pmatrix}.
+  \end{equation*}
+  Taking the determinant, we have
+  \begin{equation}
+    \label{eq:rational}
+    \det(\sigma I - J) \;=\; \det(\sigma I_m) \det(\sigma I_n - \sigma^{-1}A^\hmt A) \;=\;
+    \sigma^{m-n} \det(\sigma^2 I_n -A^\hmt A). 
+  \end{equation}
+  In~\eqref{eq:rational}, two rational functions are equal for all~$\sigma \neq 0$. 
+  Hence they are indeed identical.
+\end{proof}
+
+
+\begin{theorem}
+  \label{th:lanczos}
+  Consider matrices~$A\in \CC^{m\times n}$, $\Sigma \in \real^{r\times r}$, $U_i \in
+  \CC^{m\times r}$, and $V_i \in \CC^{n\times r}$ \textnormal{(}$i=1,2$\textnormal{)}. 
+  Suppose that~$\Sigma$ is a diagonal matrix
+  whose diagonal entries are positive. Then
+  \begin{equation}
+    \label{eq:evdJ}
+    \begin{pmatrix}
+      U_1 & U_2 \\
+      V_1 & V_2 
+    \end{pmatrix}
+    \begin{pmatrix}
+      \Sigma & 0\\
+      0 & -\Sigma
+    \end{pmatrix}
+    \begin{pmatrix}
+      U_1 & U_2 \\
+      V_1 & V_2 
+    \end{pmatrix}^\hmt
+  \end{equation}
+  is a compact eigenvalue decomposition of the Jordan-Wielandt matrix~$J$ in~\eqref{eq:JW}
+  if and only if both~$(\sqrt{2} U_1)\Sigma (\sqrt{2} V_1)^\hmt$ and~$(-\sqrt{2}U_2)\Sigma (\sqrt{2}V_2)^\hmt$ are
+  compact singular value decompositions of~$A$. 
+\end{theorem}
+
+\begin{proof} 1.~Assume that~\eqref{eq:evdJ} is a compact eigenvalue decomposition of~$J$. 
+  To prove that both $(\sqrt{2} U_1)\Sigma (\sqrt{2} V_1)^\hmt$ and~$(-\sqrt{2}U_2)\Sigma
+  (\sqrt{2}V_2)^\hmt$ are compact singular value decompositions~of~$A$, it suffices to show
+  \begin{equation}
+    \label{eq:svdA}
+    U_1^\hmt U_1 
+    \;=\; V_1^\hmt V_1 \;=\; \dfrac{I_r}{2},
+    \quad U_1\Sigma V_1^\hmt \;=\; \dfrac{A}{2}, 
+    \quad  U_2^\hmt U_2 \;=\; V_2^\hmt V_2 \;=\; \dfrac{I_r}{2},
+    \quad -U_2\Sigma V_2^\hmt \;=\; \dfrac{A}{2}.
+  \end{equation}
+  Since the decomposition~\eqref{eq:evdJ} of~$J$ renders immediately 
+  \begin{equation}
+    \nonumber
+    %\label{eq:evdJeasy}
+    %\quad  
+    U_1^\hmt U_1 + V_1^\hmt V_1 \;=\; {I_r},
+    \quad  U_2^\hmt U_2 + V_2^\hmt V_2 \;=\; {I_r},
+    \quad U_1\Sigma V_1^\hmt - U_2\Sigma V_2^\hmt \;=\; A, 
+  \end{equation}
+  we only need to prove 
+  \begin{equation}
+    \label{eq:evdJdiff}
+    %\quad 
+    U_1^\hmt U_1 - V_1^\hmt V_1 \;=\; 0, 
+    \quad U_2^\hmt U_2 - V_2^\hmt V_2 \;=\; 0,
+    \quad U_1\Sigma V_1^\hmt + U_2\Sigma V_2^\hmt \;=\; 0. 
+  \end{equation}
+  Due to the compact eigenvalue decomposition~\eqref{eq:evdJ} of~$J$, 
+  the columns of~$[U_1; V_1]$ are eigenvectors of~$J$ associated with 
+  all its~$r$ positive eigenvalues,\footnote{
+   Recall that the MATLAB-style notation~$[a; b]$ denotes the vertical 
+   array with~$a$ and~$b$ being its entries. 
+  }
+  and
+  \begin{equation}
+    %\label{eq:evd1}
+    \nonumber
+    J 
+    \begin{pmatrix}
+      U_1 \\
+      V_1
+    \end{pmatrix}
+    = 
+    \begin{pmatrix}
+      U_1 \\
+      V_1
+    \end{pmatrix}
+    \Sigma,
+    %\quad U_1^\hmt U_1 + V_1^\hmt V_1 = I_r,
+  \end{equation}
+   This implies $AV_1 = U_1\Sigma$ and~$A^\hmt U_1 = \Sigma V_1$, which can be reformulated as 
+  \begin{equation}
+    %\label{eq:evd2}
+    \nonumber
+    J 
+    \begin{pmatrix}
+      U_1 \\
+      -V_1
+    \end{pmatrix}
+    = 
+    \begin{pmatrix}
+      U_1 \\
+      -V_1
+    \end{pmatrix}
+    (-\Sigma),
+    %\quad U_1^\hmt U_1 + (-V_1)^\hmt (-V_1) = I_r.
+  \end{equation}
+  \ie, the columns of~$[U_1; -V_1]$ are eigenvectors of~$J$ associated with the negative eigenvalues.
+  Hence the columns of~$[U_1; V_1]$ and those of~$[U_1; -V_1]$ are orthogonal, justifying the first
+  equation in~\eqref{eq:evdJdiff}. The second one can be proved in the same way. 
+  To verify the third, note that  
+  \begin{equation*}
+    U_1^\hmt U_1 + (-V_1)^\hmt (-V_1) \;=\; U_1^\hmt U_1 + V_1^\hmt V_1 \;=\; I_r,
+  \end{equation*}
+  which ensures that 
+  the columns of~$[U_1; -V_1]$ form an orthonormal basis for the space spanned by the eigenvectors
+  of~$J$ associated with all its~$r$ negative eigenvalues. The columns of~$[U_2; V_2]$ 
+  also form such a basis according to the eigenvalue decomposition~\eqref{eq:evdJ}. Thus
+  Lemma~\ref{lem:unitary} ensures
+  \begin{equation*}
+    \begin{pmatrix}
+      U_2\\
+      V_2 
+    \end{pmatrix}
+    (U_2^\hmt\;\; V_2^\hmt)
+    =
+    \begin{pmatrix}
+      U_1\\
+      -V_1
+    \end{pmatrix}
+    (U_1^\hmt\;\; -\!V_1^\hmt).
+  \end{equation*}
+  Hence~$V_1V_1^\hmt = V_2V_2^\hmt$. Recalling that~$AV_1 = U_1\Sigma$ and~$AV_2 = -U_2\Sigma$
+  according to~\eqref{eq:evdJ}, 
+  we have
+  \begin{equation*}
+    U_1\Sigma V_1^\hmt + U_2\Sigma V_2^\hmt 
+    \;=\; AV_1V_1^\hmt - AV_2V_2^\hmt 
+    \;=\; 0,
+  \end{equation*}
+  which is the third equation in~\eqref{eq:evdJdiff}.
+
+  2.~Assume that both~$(\sqrt{2}U_1)\Sigma (\sqrt{2}V_1)^\hmt$ 
+  and~$(-\sqrt{2}U_2)\Sigma(\sqrt{2}V_2)^\hmt$ are compact singular value decompositions of~$A$, and
+  hence~\eqref{eq:svdA} holds.
+  To prove~\eqref{eq:evdJ} is a compact singular value decomposition for~$J$, it suffices to show
+  \begin{equation*}
+    \begin{pmatrix}
+      0 & A\\
+      A^\hmt & 0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      U_1 & U_2\\
+      V_1 & V_2
+    \end{pmatrix}
+    \begin{pmatrix}
+      \Sigma & 0\\
+      0& -\Sigma
+    \end{pmatrix}
+    \begin{pmatrix}
+      U_1 & U_2\\
+      V_1 & V_2
+    \end{pmatrix}^\hmt,
+    \quad\;
+  %\end{equation*}
+  %\begin{equation*}
+    \begin{pmatrix}
+      U_1 & U_2\\
+      V_1 & V_2
+    \end{pmatrix}^\hmt 
+    \begin{pmatrix}
+      U_1 & U_2\\
+      V_1 & V_2
+    \end{pmatrix}
+    = 
+    \begin{pmatrix}
+      I_r & 0\\
+      0 & I_r
+    \end{pmatrix},
+  \end{equation*}
+  which resolve to 
+  \begin{empheq}[left=\empheqlbrace]{align} 
+    \label{eq:Jdec}&U_1\Sigma U_1^\hmt - U_2\Sigma U_2^\hmt \;=\; 0, \quad 
+    V_1\Sigma V_1^\hmt - V_2\Sigma V_2^\hmt \;=\; 0, \quad 
+    U_1\Sigma V_1^\hmt - U_2\Sigma V_2^\hmt \;=\; A,\\[1ex]
+    \label{eq:Uorth}&U_1^\hmt U_1 + V_1^\hmt V_1 \;=\; I_r, \quad 
+    U_2^\hmt U_2 + V_2^\hmt V_2 \;=\; I_r, \quad 
+    U_1^\hmt U_2 + V_1^\hmt V_2 \;=\; 0
+  \end{empheq}
+  By Theorem~\ref{th:svdunique}, there exists a unitary matrix~$W\in \CC^{r\times r}$ such that 
+  \begin{equation*}
+    U_2 \;=\; -U_1W, \quad V_2 \;=\; V_1W, \quad \Sigma W \;=\; W\Sigma.
+  \end{equation*}
+  Hence
+  \begin{equation*}
+    U_2\Sigma U_2^\hmt \;=\; (-U_1W)\Sigma (-U_1W)^\hmt \;=\; U_1W\Sigma W^\hmt U_1^\hmt \;=\; U_1 \Sigma
+    WW^\hmt U_1^\hmt \;=\; U_1\Sigma U_1^\hmt, 
+  \end{equation*}
+  which implies~$U_1\Sigma U_1^\hmt - U_2\Sigma U_2^\hmt = 0$. Similarly, $V_1\Sigma V_1^\hmt
+  - V_2\Sigma V_2^\hmt = 0$. In addition,
+  \begin{equation*}
+    U_1^\hmt U_2 + V_1^\hmt V_2 \;=\; -U_1^\hmt U_1W + V_1^\hmt V_1W \;=\; 0,
+  \end{equation*}
+  where we use the fact that~$U_1^\hmt U_1 = V_1^\hmt V_1 = I_r/2$ from~\eqref{eq:svdA}.
+  By~\eqref{eq:svdA}, we also have
+  \begin{equation*}
+    U_1^\hmt U_1 + V_1^\hmt V_1 \;=\;  U_2^\hmt U_2 + V_2^\hmt V_2 \;=\; I_r, \quad U_1\Sigma V_1^\hmt
+    - U_2\Sigma V_2^\hmt \;=\; A. 
+  \end{equation*}
+  All the equations in~\eqref{eq:Jdec}--\eqref{eq:Uorth} have been justified. The proof is
+  complete.
+\end{proof}
+
+
+
+\section{Decompose a linear operator into partial isometries~\cite{Koranyi_2001}}
+
+\begin{definition}
+  A matrix~$A\in\CC^{m\times n}$ is said to be a partial isometry if~$\|Ax\|=\|x\|$ for
+  each~$x\in \range(A^\hmt)$ (\ie,~$x\in (\ker A)^{\perp}$).
+\end{definition}
+
+The following proposition collects various characterizations of partial isometries. 
+
+\begin{proposition}
+  \label{prop:piso}
+  For any~$A\in\CC^{m\times n}$, the following statements are equivalent. 
+  \begin{enumerate}[leftmargin=1.5em]
+    \item \label{it:ai} $A$ is a partial isometry. 
+    \item \label{it:ahi} $A^\hmt$ is a partial isometry.
+    \item \label{it:aha} $A^\hmt A$ is an orthogonal projection. 
+    \item \label{it:aah} $AA^\hmt$ is an orthogonal projection.
+    \item \label{it:ahaah} $A^\hmt A A^\hmt = A^\hmt$. 
+    \item \label{it:aaha} $A A^\hmt A = A$. 
+    \item \label{it:sina} All the nonzero singular values of~$A$ are~$1$. 
+    \item \label{it:iso} The linear operator~$T\mathrel{:} x \mapsto Ax$ is an isometric isomorphism from~$\range(A^\hmt)$ to $\range(A)$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  \ref{it:ai} $\Rightarrow $ \ref{it:iso}. Obvious. 
+
+  \ref{it:iso} $\Rightarrow $ \ref{it:ahi}. 
+  Take any~$x\in \range(A)$. 
+  There is a~$y \in \range(A^\hmt)$ such that~$x=Ay$. By assumption, $\|y\|=\|x\|$. Hence
+    \begin{equation*}
+      \|A^\hmt x\| \;\ge\; (y/\|y\|)^\hmt A^\hmt x \;=\; \frac{1}{\|x\|} y^\hmt A^\hmt x \;=\;
+      \frac{1}{x} x^\hmt x\;=\; \|x\|.
+    \end{equation*}
+  For any~$z\in\CC^{n}$, let~$z'$ be its orthogonal projection to~$\range(A^\hmt)$. Then~$\|Az\|\!=\!\|Az'\|\!=\!\|z'\|\!\le\!\|z\|$. Thus 
+    \begin{equation*}
+      \|A^\hmt x\| \;=\; \max_{\|z\|=1}z^\hmt A^\hmt x 
+      \;\le\; \max_{\|z\|=1}\|Az\|\|x\| \;\le\; \|x\|.
+    \end{equation*}
+
+    \ref{it:ahi} $\Rightarrow $ \ref{it:aha}. Since~$A^\hmt A$ is Hermitian, it suffices to show that it is idempotent. We
+      only need to prove that~$x^\hmt(A^\hmt A)^2y=x^\hmt A^\hmt Ay$ for any~$x$ and~$y\in \real^n$,
+      or equivalently, $u^\hmt A A^\hmt v=u^\hmt v$ for  any~$u$ and~$v\in \range(A)$. By
+      assumption,
+      For any~$x$, $y\in\range(A)$, we have $\|A^\hmt u\|=\|u\|$, $\|A^\hmt v\|=\|v\|$, and
+      $\|A^\hmt (u+v)\| = \|u+v\|$. Squaring the last equality, we obtain~$u^\hmt AA^\hmt v = u^\hmt
+      v$.
+
+      \ref{it:aha} $\Rightarrow$ \ref{it:ahaah}. 
+    Since~$A^\hmt A$ is a projection, we have~$A^\hmt A x = x$ for any~$x\in \range(A^\hmt A)
+    = \range(A^\hmt)$. Hence~$A^\hmt AA^\hmt = A^\hmt$.
+
+    \ref{it:ahaah} $\Rightarrow$ \ref{it:aah}. $AA^\hmt$ is Hermitian, and~$(AA^\hmt)^2=AA^\hmt AA^\hmt = AA^\hmt$. 
+
+    \ref{it:aah} $\Rightarrow$ \ref{it:aaha}. Similar to~\ref{it:aha} $\Rightarrow$ \ref{it:ahaah}.
+
+    \ref{it:aaha} $\Rightarrow$ \ref{it:sina}. Since~$AA^\hmt$ is positive semidefinite 
+    and~$(AA^\hmt)^2=AA^\hmt AA^\hmt =AA^\hmt$, we know that all the nonzero eigenvalues of~$AA^\hmt$ are $1$.
+
+    \ref{it:sina} $\Rightarrow$ \ref{it:ai}. Let~$r=\rank(A)$. If~$r = 0$, then the conclusion is trivially true.
+       Otherwise, $A$ has a compact singular value decomposition of the form~$UV^\hmt$,
+       where~$U\in\CC^{m\times r}$ and~$V\in\CC^{n\times r}$ satisfy~$U^\hmt U = V^\hmt V = I_r$.
+       Note that the columns of~$V$ is an orthonormal basis of~$\range(A^\hmt)$. 
+       Therefore, for any~$x\in \range(A^\hmt)$, 
+         $\|A x\|= \|UV^\hmt x\| = \|V^\hmt x\| = \|x\|$.
+\end{proof}
+
+\begin{theorem}
+  \label{th:uniqueevd}
+  For any Hermitian matrix~$A \in\CC^{n\times n}$, there exists a unique decomposition
+  \begin{equation}
+    \label{eq:uniqueevd}
+    A \;=\; \sum_{i=1}^k \lambda_i P_i
+  \end{equation}
+  such that
+  \begin{enumerate}
+    \item $\{\lambda_i\}$ are all real numbers and~$\lambda_1 > \cdots
+      > \lambda_k$. 
+    \item $\{P_i\}$ are all orthogonal projections, $P_iP_j = 0$ for any distinct~$i$ and~$j$,
+      and~$\sum_{i=1}^k P_i = I$. 
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  The existence is easy to establish by any eigenvalue decomposition of~$A$. We only prove the uniqueness. 
+
+  Consider any decomposition in the form of~\eqref{eq:uniqueevd}. 
+  For each~$i$, let~$V_i$ be a matrix whose columns form an orthonormal basis
+  of~$\range(P_i)$. Then~$V_i^\hmt V_i$ is an identity matrix, and~$P_i = V_iV_i^\hmt$. For any
+  distinct~$i$ and~$j$, 
+  \begin{equation*}
+    V_i^\hmt V_j \;=\;(V_i^\hmt V_i) V_i^\hmt V_j(V_j^\hmt V_j) \;=\; V_i^\hmt P_iP_j V_j\;=\; 0.
+  \end{equation*}
+  Define
+  \begin{equation*}
+    V = (V_1\; \cdots \; V_k).
+  \end{equation*}
+  Then the columns of~$V$ are orthonormal. In addition,
+  \begin{equation*}
+    VV^\hmt \;=\; \sum_{i=1}^k V_iV_i^\hmt \;=\; \sum_{i=1}^k P_i \;=\; I.
+  \end{equation*}
+  Thus~$V$ is a unitary matrix. In addition,
+  \begin{equation*}
+    A \;=\; \sum_{i=1}^m \lambda_i P_i \;=\; \sum_{i=1}^k\lambda_iV_iV_i^\hmt \;=\; \sum_{i=1}^k V_i\Lambda_iV_i^\hmt \;=\; V\Lambda V^\hmt,
+  \end{equation*}
+  where~$\Lambda_i = \lambda_i V_i^\hmt V_i$, and~$\Lambda$ is the block diagonal matrix whose
+  diagonal blocks are~$\Lambda_i$. Note that~$\Lambda$ indeed a diagonal matrix since
+  each~$\Lambda_i$ is diagonal. Thus~$V\Lambda V^\hmt$ is an eigenvalue decomposition of~$A$,
+  with~$\lambda_1$, $\dots$, $\lambda_k$ being all the distinct eigenvalues, ranked in the descending
+  order. Moreover, for
+  each~$i$, the columns
+  of~$V_i$ form an orthonormal basis of the eigenspace associated with~$\lambda_i$, and
+  hence~$P_i$ is the orthogonal projection onto this eigenspace. In this way, $\{\lambda_i\}$
+  and~$\{P_i\}$ are uniquely determined by~$A$.
+\end{proof}
+
+\begin{theorem}
+  \label{th:uniquesvd}
+  For any nonzero matrix~$A\in\CC^{m\times n}$, there exists a unique decomposition  
+  \begin{equation}
+    \label{eq:uniquesvd}
+    A \;=\; \sum_{i=1}^k \sigma_i A_i
+  \end{equation}
+  such that
+  \begin{enumerate}[leftmargin=1.5em]
+    \item $\sigma_1>\cdots >\sigma_k> 0$;
+    \item $\{A_i\}$ are all partial isometries, with 
+    $A_i A_j^\hmt$ and $A_i^\hmt A_j$ both being zero for any distinct $i$ and~$j$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  The existence is easy to establish by any singular value decomposition of~$A$. We only prove the
+  uniqueness.
+
+  Consider any decomposition in the form of~\eqref{eq:uniquesvd}. 
+  Since~$A_i^\hmt A_j = 0$ for any distinct~$i$ and~$j$, we have
+  \begin{equation}
+    \label{eq:spectdec}
+    A^\hmt A \;=\; 
+    \left(\sum_{i=1}^k \sigma_iA_i\right)^\hmt 
+    \left(\sum_{i=1}^k \sigma_iA_i\right)
+    \;=\; \sum_{i=1}^k \sigma_i^2 A_i^\hmt A_i.
+  \end{equation}   
+  For each~$i$, $A_i^\hmt A_i$ is a projection, as~$A_i$ is a partial isometry.
+  Hence~\eqref{eq:spectdec} is a decomposition specified in Theorem~\ref{th:uniqueevd}. Due to the
+  uniqueness part of Theorem~\ref{th:uniqueevd}, $\sigma_1$, $\dots$,
+  $\sigma_k$ and~$A_1^\hmt A_1$, $\dots$, $A_k^\hmt A_k$  are uniquely determined by~$A$. 
+
+  Now consider any two decompositions in the form of~\eqref{eq:uniquesvd}. According to what is
+  proved above, we can formulate the decompositions as 
+  \begin{equation}
+    \label{eq:2dec}
+    A \;=\; \sum_{i=1}^k \sigma_i A_i \quad \text{ and } \quad 
+    A\;=\;\sum_{i=1}^k \sigma_i \tilde{A}_i, 
+  \end{equation}
+  and~$A_i^\hmt A_i= \tilde{A}_i^\hmt\tilde{A}_i$ for each~$i$.
+  Consequently, for any distinct~$i$ and~$j$, 
+  \begin{equation*}
+    A_i\tilde{A}_j^\hmt \;=\; (A_iA_i^\hmt A_i)\tilde{A}_j^\hmt 
+    \;=\; (A_i\tilde{A}_i^\hmt \tilde{A}_i)\tilde{A}_j^\hmt \;=\; 0,
+  \end{equation*}
+  where the first equality is because~$A_i$ is a partial isometry (see~\ref{it:aaha} of
+  Proposition~\ref{prop:piso}), and the second is because~$\tilde{A}_i\tilde{A}_j^\hmt = 0$.  
+  Similarly, $\tilde{A}_iA_j^\hmt = 0$. Hence
+  \begin{equation*}
+    (A_i-\tilde{A}_i)(A_j-\tilde{A}_j)^\hmt \;=\; 0.
+  \end{equation*}
+  Thus
+  \begin{equation}
+    \label{eq:ddh}
+    \left[\sum_{i=1}^k \sigma_i(A_i-\tilde{A}_i) \right]
+    \left[\sum_{i=1}^k \sigma_i(A_i-\tilde{A}_i) \right]^\hmt
+    \;=\; \sum_{i=1}^k \sigma_i^2 (A_i-\tilde{A}_i)(A_i-\tilde{A}_i)^\hmt.
+  \end{equation}
+  According to~\eqref{eq:2dec}, the left-hand side of~\eqref{eq:ddh} is zero.
+  Hence~$A_i=\tilde{A}_i$ for each~$i$. Therefore, the two decompositions in~\eqref{eq:2dec} are
+  indeed identical. The proof is complete. 
+\end{proof}
+
+Theorem~\ref{th:uniquesvd} is indeed the matrix version of the following theorem. 
+
+\begin{theorem}[{\cite[Theorem~1]{Koranyi_2001}}]\label{th:orthodec}
+  Let~$X$ and~$Y$ be finite dimensional Hilbert spaces and~$T\mathrel{:}X\to Y$ be a linear
+  operator. Then there exist unique orthogonal decompositions
+  \begin{equation*}
+    \range(T^*) = X_1 \oplus \cdots \oplus X_k, \quad 
+    \range(T) = Y_1 \oplus \cdots \oplus Y_k,
+  \end{equation*}
+  scalars~$\sigma_1>\cdots >\sigma_k$, and isometries~$U_i\mathrel{:}X_i\to Y_i$ \textnormal{(}$i=1,
+  \dots, k$\textnormal{)}
+  such that 
+  \begin{equation*}
+    T|_{X_i} \;=\; \sigma_i U_i
+    \quad \text{ for each }\quad i\in\{1,\dots,k\}.
+  \end{equation*}
+\end{theorem}
+
+
+\section{Understanding SVD as a change of basis}
+
+\begin{theorem}
+  \label{th:matrix}
+  Suppose that~$X$ is finite dimensional vector space on~$\FF$ with $\{x_1,  \dots,
+  x_n\}$ being its basis and~$C_\sss{X} : X \to \FF^{n}$ being the map from any point in~$X$ to its
+  coordinate under this basis; $Y$, $\{y_1, \dots, y_m\}$, and~$C_\sss{Y} : Y \to \FF^{m}$ are similar. 
+  Consider a linear operator~$T \mathrel{:} X \to Y$.
+  \begin{enumerate}[leftmargin=1.5em]
+    \item There is a unique matrix~$A\in \FF^{m\times n}$
+   that represents~$T$ under the aforementioned bases of~$X$ and~$Y$ in the sense that 
+  \begin{equation*}
+    A C_\sss{X} (x) = C_\sss{Y} T (x) \quad \text{ for all } \quad x\in X.
+  \end{equation*}
+  %meaning that applying~$T$ to~$x$ is equivalent to multiplying its coordinate by~$A$. 
+  Indeed, the $i$-th column of~$A$ is $A_i = C_\sss{Y}T(x_i)$, namely the coordinate of~$T(x_i)$. 
+\item $T = C_\sss{Y}^\inv A C_\sss{X}$, meaning that applying~$T$ to any vector in~$X$ is equivalent to
+  multiplying its coordinate by~$A$ and then using the result as the coordinate to locate a vector in~$Y$.  
+\item $C_\sss{X}(\ker(T)) = \ker(A)$, and~$C_\sss{Y} (\range(T)) = \range(A)$.
+\item $A$ has full row rank if and only if~$T$ is injective; $A$ has full column rank if and only
+  if~$T$ is surjective;
+  when~$m=n$, $T$ is invertible if and only if~$A$ is invertible, and~$A^\inv$
+  represents~$T^\inv\mathrel{:} Y\to X$ under the aforementioned bases for~$X$ and~$Y$.
+\item $A^\adj$ represents~$T^\adj \mathrel{:} Y^\adj \to X^\adj$ under the bases for~$X^*$ and~$Y^*$
+  that are dual to~$\{x_1, \dots, x_n\}$ and~$\{y_1, \dots, y_n\}$ respectively.
+\item Let~$\{x_1', \dots, x_n'\}$ be a basis for~$X$, $\{y_1', \dots, y_m'\}$ be a
+  basis for~$Y$, and~$B\in \FF^{m\times n}$ be the representation of~$T$ under such bases.
+  Then~$A = Q^\inv B P$, where~$P\in \FF^{n\times n}$ and~$Q\in \FF^{m \times m}$ 
+  are the changing of basis matrices such that 
+  \begin{equation*}
+    (x_1, \dots, x_n) = (x_1', \dots, x_n')P, \qquad 
+    (y_1, \dots, y_m) = (y_1', \dots, y_m')Q.
+  \end{equation*}
+  \end{enumerate}
+\end{theorem}
+
+With the view point presented in~Theorem~\ref{th:matrix}, we can understand SVD as follows.
+
+Let~$A\in \CC^{m\times n}$ be a nonzero matrix, and~$U\Sigma V^\hmt$ be its SVD. 
+Consider the linear operator~$T \mathrel{:} x \mapsto A x$ from~$\CC^{n}$ to~$\CC^{m}$.
+Then~$A$ represents~$T$ under the canonical bases. If we take the columns of~$V$ as the basis
+for~$\CC^{n}$ and those of~$U$ as the basis for~$\CC^{m}$, then SVD provides a simple
+representation for~$T$, which is~$\Sigma$.
+
+%Suppose that~$\hat{U}\hat{\Sigma} \hat{V}^\hmt$ is a compact SVD of~$A$. 
+%Then~$A \hat{V} = \hat{U}\hat{\Sigma}$. 
+%Note that the columns of~$\hat{U}\hat{\Sigma}$ form an orthogonal (not necessarily normalized) basis
+%for~$\range(A)$, and those of~$\hat{V}$ form an orthonormal basis for~$\range(A^\hmt)$.  Thus 
+%SVD tells us that there exists an orthogonal basis for~$\range(A^\hmt)$ such that its image
+%under~$T\mathrel{:}x\mapsto Ax$ is an orthogonal basis for~$\range(A)$.
+
+Recall the decompositions
+\begin{equation*}
+\CC^{n} \;=\; \ker(A) \oplus \range(A^\hmt), 
+\quad 
+\CC^{m} \;=\; \ker(A^\hmt) \oplus \range(A). 
+\end{equation*}
+When~$T$ acts on~$\CC^{n}$, it drops out the information in~$\ker(A)$, and provides no information
+in~$\ker(A^\hmt)$.  Consequently,~$T$ is not an isomorphism if either~$\ker(A)$ or~$\ker(A^\hmt)$ 
+is nonzero.  
+The restriction~$\hat{T} \mathrel{:} \range(A^\hmt)\to\range(A)$ with~$\hat{T} (x) =Ax$ is however 
+always an isomorphism. 
+Suppose that~$\hat{U}\hat{\Sigma} \hat{V}^\hmt$ is a compact SVD of~$A$. 
+Note that the columns of~$\hat{U}$ form an orthogonal basis
+for~$\range(A)$, and those of~$\hat{V}$ form an orthonormal basis for~$\range(A^\hmt)$.  
+Under these bases, $\hat{T}$ is represented by~$\hat{\Sigma}$.
+The representation for~$\hat{T}^\inv\mathrel{:} \range(A)\to \range(A^\hmt)$ be 
+is~$\hat{\Sigma}^\inv$.  
+
+The operator~$T^\pin \mathrel{:} \CC^{m}\to \CC^{n}$~defined by%
+\[
+T^\pin|_{\range(A)} = \hat{T}^\inv, \quad 
+T^\pin|_{\ker(A^\hmt)} = 0
+\]
+is called the Moore-Penrose pseudoinverse of~$T$. 
+The representation 
+of~$T^\pin$ under the canonical bases is called the Moore-Penrose pseudoinverse of~$A$, which turns 
+out to be~$A^\pin = \hat{U}\hat{\Sigma}^\inv\hat{V}^\hmt$.
+
+We can regard any nonzero linear operator as a bijection by restricting its domain and image
+space.
+SVD tells us that any nonzero linear operator between finite dimensional Hilbert spaces
+can be represented by a positive diagonal matrix under properly chosen orthonormal bases for the
+restricted domain and image space. This also leads us to Theorem~\ref{th:orthodec}. 
+
+
+\section{Examples of applications}
+
+\begin{proposition}[Polar decomposition]
+  \label{th:polar} Let~$A \in \CC^{m\times n}$ be a matrix.
+  \begin{enumerate}[leftmargin=1.5em]
+    \item If~$m\ge n$, there exists a positive semidefinite matrix~$P \in \CC^{n\times n}$ and
+      a matrix~$U\in \CC^{m\times n}$ such that~$A = UP$ and~$U^\hmt U = I_n$; there also exists
+      a positive semidefinite matrix~$Q\in \CC^{m\times m}$ and a matrix~$V\in\CC^{m\times n}$ such
+      that~$A = QV$ and~$V^\hmt V = I_n$.
+      In this case, $P = (A^\hmt A)^{\frac{1}{2}}$.
+    \item If~$n\ge m$, there exists a positive semidefinite matrix~$P \in \CC^{n\times n}$ and
+      a matrix~$U\in \CC^{m\times n}$ such that~$A = UP$ and~$UU^\hmt = I_m$; there also exists
+      a positive semidefinite matrix~$Q\in \CC^{m\times m}$ and a matrix~$V\in\CC^{m\times n}$ such
+      that~$A = QV$ and~$V V^\hmt = I_m$. In this case, $Q = (AA^\hmt)^{\frac{1}{2}}$.
+  \end{enumerate}
+   If~$A$ is real, we can require~$P$, $U$, $Q$, and~$V$ to be real. 
+\end{proposition}
+
+\begin{proof}
+  We only prove~1.
+  Suppose that~$ W\Sigma Z^\hmt$ is an SVD of~$A$. 
+
+  Note that the last~$m-n$ rows of~$\Sigma$ are zero. 
+  Let~$\hat{\Sigma}$ be the fist~$n$ rows of~$\Sigma$, and~$\hat{W}$ be the first~$n$ columns
+  of~$W$. Then~$A = \hat{W}\hat{\Sigma}Z^\hmt $. Define~$U = \hat{W}Z^\hmt$ and~$P
+  = Z\hat{\Sigma} Z^\hmt$. Then~$P$ is positive semidefinite, and
+  \begin{equation*}
+    A \;=\; \hat{W}\hat{\Sigma} Z\;=\; UP,\quad 
+    U^\hmt U \;=\; Z\hat{W}^\hmt \hat{W} Z^\hmt \;=\;ZZ^\hmt \;=\; I_n.
+  \end{equation*}
+  Consequently, $A^\hmt A  =  P^\hmt U^\hmt U P = P^2$, and hence~$P = (A^\hmt
+  A)^{\frac{1}{2}}$. 
+
+  Let~$\bar{\Sigma} = (\Sigma\;\, 0_{m\times(m-n)})$ and~$\bar{Z} = (Z\;\,0_{n\times (m-n)})$.
+  Then~$A = W\bar{\Sigma} \bar{Z}^\hmt$. Define~$Q = W\bar{\Sigma} W^\hmt$ and~$V = W\bar{Z}^\hmt$.
+  Then~$Q$ is positive semidefinite, and
+  \begin{equation*}
+    A\;=\; W\bar{\Sigma}\bar{Z}^\hmt \;=\; QV, \quad 
+    V^\hmt V \;=\; \bar{Z}W^\hmt W \bar{Z}^\hmt \;=\; \bar{Z}\bar{Z}^\hmt \;=\; ZZ^\hmt \;=\; I_n.
+  \end{equation*}
+
+  If~$A$ is real, then~$W$, $\Sigma$, and~$Z$ can all be real,
+  ensuring~$P$, $U$, $Q$, and~$V$ to be real.
+\end{proof}
+
+\begin{proposition}[\cite{Fan_Hoffman_1955}]
+  If~$H$ is the Hermitian part of a matrix~$A \in \CC^{n\times n}$. Enumerating the eigenvalues
+  of~$H$ as~$\lambda_1(H) \ge\dots\ge \lambda_n(H)$, and the singular values of~$A$
+  as~$\sigma_i(A) \ge\dots\ge \sigma_n(A)$, we have~$\sigma_{i}(A)\ge
+  \lambda_i(H)$ for each~$i = 1, \dots, n$.
+\end{proposition}
+
+\begin{proof}
+  By Theorem~\ref{th:polar}, there exists a positive semidefinite matrix~$P\in \CC^{n\times n}$ and
+  a unitary matrix~$U\in \CC^{n\times n}$ such that~$A = UP$. For any unit vector~$x\in \CC^n$, 
+  \begin{equation*}
+    x^\hmt H x = \frac{1}{2}x^\hmt (A^\hmt + A)x = \Re(x^\hmt A x) \le |x^\hmt A x|
+    = |x^\hmt U P x|\le \|Px\| = (x^\hmt P^2 x)^{\frac{1}{2}} =(x^\hmt A^\hmt A x)^{\frac{1}{2}}.
+  \end{equation*}
+  Therefore, applying the Courant-Fischer-Weyl min-max principle, we know that
+  \begin{equation*}
+    \lambda_i(H) \;\le\; \lambda_i(A^\hmt A)^{\frac{1}{2}}\;=\; \sigma_i(A). 
+  \end{equation*} 
+\end{proof}
+
+\begin{proposition}
+  For matrices~$A_1$ and $A_2 \in \CC^{m\times n}$, $A_1^\hmt A_1 = A_2^\hmt A_2$ if and only if there exists a unitary
+  matrix~$U \in \CC^{m\times m}$ such that~$A_2 = UA_1$. 
+\end{proposition}
+
+\begin{proof}
+  The ``if'' part is trivial. We focus on the ``only if'' part.
+  Let~$V \Lambda V^\hmt$ be an eigenvalue decomposition of~$A_1^\hmt A_1 = A_2^\hmt A_2$ such that
+  the diagonal entries of~$\Lambda$ is descending. By
+  Theorem~\ref{th:eyfull}, there exists $W_1$, $W_2\in \CC^{m\times m}$ and~$\Sigma \in \real^{m\times n}$
+  such that~$A_1=W_1 \Sigma V^\hmt$ 
+  and~$A_2 = W_2 \Sigma V^\hmt$. Set~$U = W_2W_1^\hmt$.
+\end{proof}
+
+\small
+\bibliography{ref-svd}
+\bibliographystyle{plain}
+\end{document}
