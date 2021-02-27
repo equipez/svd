@@ -324,12 +324,12 @@ with~$a$ and~$b$ being its entries.
   Let~$A\in \CC^{n\times n}$ be an Hermitian matrix. 
   \begin{enumerate}[leftmargin=1.5em]
     \item 
-      $U\Lambda U^\hmt$ is called an eigenvalue decomposition of~$A$, if~$A = U \Lambda U^\hmt$, $U
+      $U\Lambda U^\hmt$ is called an eigenvalue decomposition of~$A$, provided that~$A = U \Lambda U^\hmt$, $U
       \in \CC^{n\times n}$ is a unitary matrix, and~$\Lambda \in \real^{n\times n}$ is a diagonal
       matrix.
     \item 
       $U\Lambda U^\hmt$ is called a compact eigenvalue decomposition of~$A$,
-      if~$A = U \Lambda U^\hmt$, $U \in \CC^{n\times r}$ is a matrix with~$U^\hmt U = I_r$,
+      provided that~$A = U \Lambda U^\hmt$, $U \in \CC^{n\times r}$ is a matrix with~$U^\hmt U = I_r$,
       and~$\Lambda \in \real^{r\times r}$ is a diagonal matrix whose diagonal entries are nonzero.
   \end{enumerate}
 \end{definition}
@@ -365,7 +365,7 @@ with~$a$ and~$b$ being its entries.
       \real^{m\times n}$ is a matrix whose first~$r$ diagonal entries~(if~$r\ge 1$) are positive
       while all the other entries are zero.
     \item 
-      When~$r \ge 1$, $U\Sigma U^\hmt$ is called a compact (or \emph{reduced}) singular value decomposition of~$A$,
+      When~$r \ge 1$, $U\Sigma V^\hmt$ is called a compact (or \emph{reduced}) singular value decomposition of~$A$,
       provided that~$A = U \Sigma V^\hmt$, $U \in \CC^{m\times r}$ and~$V\in \CC^{n\times r}$ are matrices
       with~$U^\hmt U = V^\hmt V = I_r$,
       and~$\Sigma \in \real^{r\times r}$ is a diagonal matrix whose diagonal entries are positive.
@@ -519,14 +519,15 @@ The proof is complete.
   \begin{equation}
     \nonumber
     %\label{eq:jordan}
-    \max \{\Re(x^\hmt A y) \mathrel{:} \|x\|=\|y\|=1, \; x \in \CC^{m}, \; y\in\CC^{n}\},
+    \max\; \{\Re(x^\hmt A y) \mathrel{:} \|x\|=\|y\|=1, \; x \in \CC^{m}, \; y\in\CC^{n}\},
   \end{equation}
   and~${\sigma} = \Re(u^\hmt Av)$. Then~$Av = \sigma u$,~$A^\hmt u
   = \sigma v$, and~$\sigma>0$. 
 \end{lemma}
 
 \begin{proof}
-  Since~$A\neq 0$, it is obvious that~$\sigma >0$. Hence~$Av \neq 0$. By assumption,~
+  Since~$A\neq 0$, it is obvious that~$\sigma >0$. Hence~$Av \neq 0$. According to the definition
+  of~$u$,
   \begin{equation*}
     \Re(u^\hmt Av)\ge \Re(\left({Av}/{\|Av\|}\right)^\hmt Av) \;=\;
     \|Av\|\;=\;\|u\|\|Av\|.
@@ -574,7 +575,7 @@ The proof is complete.
       Meanwhile, $A(-y) = -\sigma x$, and~$A^\hmt x = -\sigma (-y)$, making~$[x; -y]$ 
       an eigenvector of~$J$ associated with~$-\sigma \neq \sigma$. Since eigenvectors for
     different eigenvalues are orthogonal, we have~$x^\hmt x - y^\hmt y= 0$. Thus~$\|x\|=\|y\|$,
-    which are nonzero since~$w\neq 0$. Finally, let~$u = x/\|x\|$ and~$y = y/\|y\|$. 
+    which are nonzero since~$w\neq 0$. Finally, let~$u = x/\|x\|$ and~$v = y/\|y\|$. 
   \end{enumerate}
 \end{remark}
 
