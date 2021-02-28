@@ -413,7 +413,7 @@ singular value~$\sigma_{i}$.
 \subsection{Uniqueness of (compact) SVD}
 
 \begin{theorem}
- Let~$U\Sigma V^\hmt$ be a compact singular value decomposition of a matrix~$A$.
+ Suppose that~$U\Sigma V^\hmt$ be a compact singular value decomposition of a matrix~$A$.
  \begin{enumerate}[leftmargin=1.5em]
    \item $U\Sigma^2 U^\hmt$ is a compact eigenvalue decomposition of~$AA^\hmt$, 
      and hence the diagonal entries of~$\Sigma^2$ are the positive eigenvalues of~$AA^\hmt$, multiplicity included. 
@@ -544,18 +544,18 @@ The proof is complete.
   \end{equation*}
 \end{proof}
 
-\begin{remark}
-  Indeed, the~$\sigma$ in Lemma~\ref{lem:jordan} is the largest singular value of~$A$, because
-  \begin{equation*}
-    \max_{\|x\|=\|y\|=1} \Re(x^\hmt A y) \;=\; \max_{\|y\|=1}\max_{\|x\|=1}\Re(x^\hmt Ay)
-    \;=\;\max_{\|y\|=1}\|Ay\| \;=\; \|A\|\;=\;\sigma_{\max}(A).
-  \end{equation*}
-  Similarly, we can see that
-  \begin{equation*}
-    \max_{\|x\|=\|y\|=1}|x^\hmt A y| \;=\; \sigma_{\max}(A).
-  \end{equation*}
-  See~\cite{Cao_Feng_2003} for more about variational representations for singular values of matrices.
-\end{remark}
+%\begin{remark}
+%  Indeed, the~$\sigma$ in Lemma~\ref{lem:jordan} is the largest singular value of~$A$, because
+%  \begin{equation*}
+%    \max_{\|x\|=\|y\|=1} \Re(x^\hmt A y) \;=\; \max_{\|y\|=1}\max_{\|x\|=1}\Re(x^\hmt Ay)
+%    \;=\;\max_{\|y\|=1}\|Ay\| \;=\; \|A\|\;=\;\sigma_{\max}(A).
+%  \end{equation*}
+%  Similarly, we can see that
+%  \begin{equation*}
+%    \max_{\|x\|=\|y\|=1}|x^\hmt A y| \;=\; \sigma_{\max}(A).
+%  \end{equation*}
+%  See~\cite{Cao_Feng_2003} for more about variational representations for singular values of matrices.
+%\end{remark}
 
 \begin{remark}
   When Lemma~\ref{lem:jordan} is applied in the proof of Theorem~\ref{th:svd} later, we only need
@@ -1035,7 +1035,7 @@ Lemma~\ref{lem:uav}, but there are other ways to prove it.
   Meanwhile, we can reformulate~\eqref{eq:evd1}--\eqref{eq:evd2} as $J\bar{U}= \bar{U}\bar{\Sigma}$. 
   Therefore,
   \[
-  \bar{U}^\hmt J \bar{U} = \bar{\Sigma}. 
+  \bar{U}^\hmt J \bar{U} \;=\; \bar{\Sigma}. 
   \]
   Note that~$\|J\|_\fro = \|\bar{\Sigma}\|_\fro$ according to the compact eigenvalue
   decomposition~\eqref{eq:evdJ},
