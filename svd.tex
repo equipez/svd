@@ -1321,11 +1321,11 @@ Theorem~\ref{th:uniquesvd} is indeed the matrix version of the following theorem
     \range(T^*) = X_1 \oplus \cdots \oplus X_k, \quad 
     \range(T) = Y_1 \oplus \cdots \oplus Y_k,
   \end{equation*}
-  scalars~$\sigma_1>\cdots >\sigma_k$, and isometries~$U_i\mathrel{:}X_i\to Y_i$ \textnormal{(}$i=1,
+  scalars~$\sigma_1>\cdots >\sigma_k$, and isometries~$T_i\mathrel{:}X_i\to Y_i$ \textnormal{(}$i=1,
   \dots, k$\textnormal{)}
   such that 
   \begin{equation*}
-    T|_{X_i} \;=\; \sigma_i U_i
+    T|_{X_i} \;=\; \sigma_i T_i
     \quad \text{ for each }\quad i\in\{1,\dots,k\}.
   \end{equation*}
 \end{theorem}
@@ -1396,7 +1396,7 @@ always an isomorphism.
 Suppose that~$\hat{U}\hat{\Sigma} \hat{V}^\hmt$ is a compact SVD of~$A$. 
 Note that the columns of~$\hat{U}$ form an orthogonal basis
 for~$\range(A)$, and those of~$\hat{V}$ form an orthonormal basis for~$\range(A^\hmt)$.  
-Under these bases, $\hat{T}$ is represented by~$\hat{\Sigma}$.
+Under these bases,~$\hat{T}$ is represented by~$\hat{\Sigma}$.
 The representation for~$\hat{T}^\inv\mathrel{:} \range(A)\to \range(A^\hmt)$ be 
 is~$\hat{\Sigma}^\inv$.  
 
