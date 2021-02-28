@@ -302,7 +302,7 @@ Hong Kong, China ({\tt zaikun.zhang@polyu.edu.hk}).
 \end{abstract}
 
 \textbf{Notation}. Throughout the document,~$\|\cdot\|$ stands for the $2$-norm for vectors and matrices. 
-In inline equations, we use the MATLAB-style notation~$[a; b]$ to denote the vertical array 
+In inline equations, we use the MATLAB-style notation~$[a; b]$ to denote a vertical array 
 with~$a$ and~$b$ being its entries. 
 
 \section{Eigenvalue decomposition}
@@ -659,7 +659,7 @@ The proof is complete.
   Define~$\hat{A} = A-\sigma uv^\hmt$. Then it is easy to check that~$\ker(A)\subset
   \ker(\hat{A})$ and~$v\in\ker(\hat{A})$. Since~$v\in\range(A^\hmt)\perp \ker(A)$, we know
   that~$\dim\ker(\hat{A})\ge \dim\ker(A)+1$. Thus~$\rank(\hat{A}) \le \rank(A)-1$.
-  If~$\hat{A} = 0$, then we are done. Otherwise, by the induction
+  If~$\hat{A} = 0$, we are done. Otherwise, by the induction
   hypothesis,~$\hat{A}$ has a compact singular value decomposition~$\hat{U}\hat{\Sigma}\hat{V}^\hmt$. 
   Consequently, 
   \begin{equation}
@@ -774,6 +774,11 @@ The proof is complete.
   Hence~$U\Lambda^{\frac{1}{2}}V^\hmt$ is a compact singular value decomposition of~$A$. 
 \end{proof}
 
+\begin{remark}
+The major point of the proof is to show that~$U\Lambda^{\frac{1}{2}}V^\hmt =A$. Here we use
+Lemma~\ref{lem:uav}, but there are other ways to prove it. 
+\end{remark}
+
 \begin{theorem}
   \label{th:eyfull}
   Let~$A \in \CC^{m\times n}$ be a matrix.
@@ -810,7 +815,7 @@ The proof is complete.
 
 \begin{lemma}
   \label{lem:lanczos}
-  Given a matrix~$A \in \CC^{m\times n}$, define its Jordan-Wielandt form~\cite{Mathias_2013}
+  Given a matrix~$A \in \CC^{m\times n}$, define its Jordan-Wielandt form~\cite{Mathias_2013} to be
 \begin{equation}
   \label{eq:JW}
   J = 
@@ -901,7 +906,7 @@ The proof is complete.
       0 & \sigma I_n - \sigma^{-1}A^\hmt A 
     \end{pmatrix}.
   \end{equation*}
-  Taking the determinant, we have
+  Taking determinants, we have
   \begin{equation}
     \label{eq:rational}
     \det(\sigma I - J) \;=\; \det(\sigma I_m) \det(\sigma I_n - \sigma^{-1}A^\hmt A) \;=\;
@@ -939,43 +944,25 @@ The proof is complete.
 \end{theorem}
 
 \begin{proof} 1.~Assume that~\eqref{eq:evdJ} is a compact eigenvalue decomposition of~$J$. 
-  To prove that both $(\sqrt{2} U_1)\Sigma (\sqrt{2} V_1)^\hmt$ and~$(-\sqrt{2}U_2)\Sigma
-  (\sqrt{2}V_2)^\hmt$ are compact singular value decompositions~of~$A$, it suffices to show
+  We will prove that $(\sqrt{2} U_1)\Sigma (\sqrt{2} V_1)^\hmt$ is a 
+  compact singular value decompositions~of~$A$, and the other one can be discussed similarly.
+  It suffices to show that
   \begin{equation}
     \label{eq:svdA}
-    U_1^\hmt U_1 
-    \;=\; V_1^\hmt V_1 \;=\; \dfrac{I_r}{2},
-    \quad U_1\Sigma V_1^\hmt \;=\; \dfrac{A}{2}, 
-    \quad  U_2^\hmt U_2 \;=\; V_2^\hmt V_2 \;=\; \dfrac{I_r}{2},
-    \quad -U_2\Sigma V_2^\hmt \;=\; \dfrac{A}{2}.
-  \end{equation}
-  Since the decomposition~\eqref{eq:evdJ} of~$J$ renders immediately 
-  \begin{equation}
-    \nonumber
-    %\label{eq:evdJeasy}
-    %\quad  
-    U_1^\hmt U_1 + V_1^\hmt V_1 \;=\; {I_r},
-    \quad  U_2^\hmt U_2 + V_2^\hmt V_2 \;=\; {I_r},
-    \quad U_1\Sigma V_1^\hmt - U_2\Sigma V_2^\hmt \;=\; A, 
-  \end{equation}
-  we only need to prove 
-  \begin{equation}
-    \label{eq:evdJdiff}
-    %\quad 
-    U_1^\hmt U_1 - V_1^\hmt V_1 \;=\; 0, 
-    \quad U_2^\hmt U_2 - V_2^\hmt V_2 \;=\; 0,
-    \quad U_1\Sigma V_1^\hmt + U_2\Sigma V_2^\hmt \;=\; 0. 
+    U_1^\hmt U_1 \;=\; V_1^\hmt V_1 \;=\; \dfrac{I_r}{2},
+    \quad U_1\Sigma V_1^\hmt \;=\; \dfrac{A}{2}.
+    %\quad  U_2^\hmt U_2 \;=\; V_2^\hmt V_2 \;=\; \dfrac{I_r}{2},
+    %\quad -U_2\Sigma V_2^\hmt \;=\; \dfrac{A}{2}.
   \end{equation}
   Due to the compact eigenvalue decomposition~\eqref{eq:evdJ} of~$J$, 
   the columns of~$[U_1; V_1]$ are eigenvectors of~$J$ associated with 
   all its~$r$ positive eigenvalues,\footnote{
-   Recall that the MATLAB-style notation~$[a; b]$ denotes the vertical 
+   Recall that the MATLAB-style notation~$[a; b]$ denotes a vertical 
    array with~$a$ and~$b$ being its entries. 
   }
   and
   \begin{equation}
-    %\label{eq:evd1}
-    \nonumber
+    \label{eq:evd1}
     J 
     \begin{pmatrix}
       U_1 \\
@@ -991,8 +978,7 @@ The proof is complete.
   \end{equation}
    This implies $AV_1 = U_1\Sigma$ and~$A^\hmt U_1 = \Sigma V_1$, which can be reformulated as 
   \begin{equation}
-    %\label{eq:evd2}
-    \nonumber
+    \label{eq:evd2}
     J 
     \begin{pmatrix}
       U_1 \\
@@ -1007,44 +993,69 @@ The proof is complete.
     %\quad U_1^\hmt U_1 + (-V_1)^\hmt (-V_1) = I_r.
   \end{equation}
   \ie, the columns of~$[U_1; -V_1]$ are eigenvectors of~$J$ associated with the negative eigenvalues.
-  Hence the columns of~$[U_1; V_1]$ and those of~$[U_1; -V_1]$ are orthogonal, justifying the first
-  equation in~\eqref{eq:evdJdiff}. The second one can be proved in the same way. 
-  To verify the third, note that  
+  Hence the columns of~$[U_1; V_1]$ and those of~$[U_1; -V_1]$ are orthogonal. Thus 
   \begin{equation*}
-    U_1^\hmt U_1 + (-V_1)^\hmt (-V_1) \;=\; U_1^\hmt U_1 + V_1^\hmt V_1 \;=\; I_r,
-  \end{equation*}
-  which ensures that 
-  the columns of~$[U_1; -V_1]$ form an orthonormal basis for the space spanned by the eigenvectors
-  of~$J$ associated with all its~$r$ negative eigenvalues. The columns of~$[U_2; V_2]$ 
-  also form such a basis according to the eigenvalue decomposition~\eqref{eq:evdJ}. Thus
-  Lemma~\ref{lem:unitary} ensures
-  \begin{equation*}
-    \begin{pmatrix}
-      U_2\\
-      V_2 
-    \end{pmatrix}
-    (U_2^\hmt\;\; V_2^\hmt)
-    =
+    U_1^\hmt U_1 -V_1^\hmt V_1 \;=\; 
+    (U_1^\hmt \;\, V_1^\hmt)
     \begin{pmatrix}
       U_1\\
       -V_1
-    \end{pmatrix}
-    (U_1^\hmt\;\; -\!V_1^\hmt).
+    \end{pmatrix} \;=\;0.
   \end{equation*}
-  Hence~$V_1V_1^\hmt = V_2V_2^\hmt$. Recalling that~$AV_1 = U_1\Sigma$ and~$AV_2 = -U_2\Sigma$
-  according to~\eqref{eq:evdJ}, 
-  we have
+  With~\eqref{eq:evdJ} being a compact eigenvalue decomposition, we also have~$U_1^\hmt U_1 + V_1^\hmt V_1 = I_r$.
+  Hence $U_1^\hmt U_1 = V_1^\hmt V_1= {I_r}/{2}$,
+  which is the first equality in~\eqref{eq:svdA}. To establish the second one, define 
   \begin{equation*}
-    U_1\Sigma V_1^\hmt + U_2\Sigma V_2^\hmt 
-    \;=\; AV_1V_1^\hmt - AV_2V_2^\hmt 
-    \;=\; 0,
+    \bar{U}\;=\;
+    \begin{pmatrix}
+      U_1 & U_1 \\
+      V_1 & -V_1
+    \end{pmatrix},
+    \quad
+      \bar{\Sigma} \;=\; 
+    \begin{pmatrix}
+        \Sigma & 0\\
+        0&-\Sigma
+    \end{pmatrix}.
   \end{equation*}
-  which is the third equation in~\eqref{eq:evdJdiff}.
+  Then
+  \begin{equation}
+    \label{eq:zortho}
+    \bar{U}^\hmt \bar{U} \;=\;
+    \begin{pmatrix}
+      U_1^\hmt U_1 + V_1^\hmt V_1 & U_1^\hmt U_1-V_1^\hmt V_1\\
+      U_1^\hmt U_1 - V_1^\hmt V_1 & U_1^\hmt U_1+V_1^\hmt V_1
+    \end{pmatrix}
+    \;=\; 
+    \begin{pmatrix}
+      I_r & 0\\
+      0 & I_r
+    \end{pmatrix}.
+  \end{equation}
+  Meanwhile, we can reformulate~\eqref{eq:evd1}--\eqref{eq:evd2} as $J\bar{U}= \bar{U}\bar{\Sigma}$. 
+  Therefore,
+  \[
+  \bar{U}^\hmt J \bar{U} = \bar{\Sigma}. 
+  \]
+  Note that~$\|J\|_\fro = \|\bar{\Sigma}\|_\fro$ according to the compact eigenvalue
+  decomposition~\eqref{eq:evdJ},
+  and~$\|\bar{U}\|=1$ due to~\eqref{eq:zortho}.
+  Thus Lemma~\ref{lem:uav} renders
+    \begin{equation}
+      \label{eq:jdec}
+      J \;=\; \bar{U}\bar{\Sigma}\bar{U}^\hmt, 
+    \end{equation}
+  from which we can obtain $A = 2U_1\Sigma V_1^\hmt$ by straightforward calculations.
 
   2.~Assume that both~$(\sqrt{2}U_1)\Sigma (\sqrt{2}V_1)^\hmt$ 
-  and~$(-\sqrt{2}U_2)\Sigma(\sqrt{2}V_2)^\hmt$ are compact singular value decompositions of~$A$, and
-  hence~\eqref{eq:svdA} holds.
-  To prove~\eqref{eq:evdJ} is a compact singular value decomposition for~$J$, it suffices to show
+  and~$(-\sqrt{2}U_2)\Sigma(\sqrt{2}V_2)^\hmt$ are compact singular value decompositions of~$A$.
+  Then we have~\eqref{eq:svdA} and 
+  \begin{equation}
+    \label{eq:svdA2}
+     U_2^\hmt U_2 \;=\; V_2^\hmt V_2 \;=\; \dfrac{I_r}{2},
+    \quad -U_2\Sigma V_2^\hmt \;=\; \dfrac{A}{2}.
+  \end{equation}
+  To prove that~\eqref{eq:evdJ} is a compact singular value decomposition for~$J$, it suffices to show
   \begin{equation*}
     \begin{pmatrix}
       0 & A\\
@@ -1089,7 +1100,8 @@ The proof is complete.
     U_2^\hmt U_2 + V_2^\hmt V_2 \;=\; I_r, \quad 
     U_1^\hmt U_2 + V_1^\hmt V_2 \;=\; 0
   \end{empheq}
-  By Theorem~\ref{th:svdunique}, there exists a unitary matrix~$W\in \CC^{r\times r}$ such that 
+  Since~$U_1\Sigma V_1^\hmt = -U_2\Sigma V_2^\hmt = A/2$, Theorem~\ref{th:svdunique} implies 
+  the existence of a unitary matrix~$W\in \CC^{r\times r}$ such that 
   \begin{equation*}
     U_2 \;=\; -U_1W, \quad V_2 \;=\; V_1W, \quad \Sigma W \;=\; W\Sigma.
   \end{equation*}
@@ -1104,7 +1116,7 @@ The proof is complete.
     U_1^\hmt U_2 + V_1^\hmt V_2 \;=\; -U_1^\hmt U_1W + V_1^\hmt V_1W \;=\; 0,
   \end{equation*}
   where we use the fact that~$U_1^\hmt U_1 = V_1^\hmt V_1 = I_r/2$ from~\eqref{eq:svdA}.
-  By~\eqref{eq:svdA}, we also have
+  By~\eqref{eq:svdA} and~\eqref{eq:svdA2}, we also have
   \begin{equation*}
     U_1^\hmt U_1 + V_1^\hmt V_1 \;=\;  U_2^\hmt U_2 + V_2^\hmt V_2 \;=\; I_r, \quad U_1\Sigma V_1^\hmt
     - U_2\Sigma V_2^\hmt \;=\; A. 
@@ -1113,6 +1125,10 @@ The proof is complete.
   complete.
 \end{proof}
 
+\begin{remark}
+  Due to~\eqref{eq:zortho} and~\eqref{eq:jdec}, 
+  $\bar{U}\bar{\Sigma}\bar{U}^\hmt$ is indeed a compact eigenvalue decomposition of~$J$.
+\end{remark}
 
 
 \section{Decompose a matrix into partial isometries~\cite{Koranyi_2001}}
@@ -1259,7 +1275,8 @@ The following proposition collects various characterizations of partial isometri
     \left(\sum_{i=1}^k \sigma_iA_i\right)
     \;=\; \sum_{i=1}^k \sigma_i^2 A_i^\hmt A_i.
   \end{equation}   
-  For each~$i$, $A_i^\hmt A_i$ is a projection, as~$A_i$ is a partial isometry.
+  For each~$i$, $A_i^\hmt A_i$ is an orthogonal projection as~$A_i$ is a partial isometry (see~\ref{it:aha} of
+  Proposition~\ref{prop:piso}).
   Hence~\eqref{eq:spectdec} is a decomposition specified in Theorem~\ref{th:uniqueevd}. Due to the
   uniqueness part of Theorem~\ref{th:uniqueevd}, $\sigma_1$, $\dots$,
   $\sigma_k$ and~$A_1^\hmt A_1$, $\dots$, $A_k^\hmt A_k$  are uniquely determined by~$A$. 
@@ -1271,8 +1288,8 @@ The following proposition collects various characterizations of partial isometri
     A \;=\; \sum_{i=1}^k \sigma_i A_i \quad \text{ and } \quad 
     A\;=\;\sum_{i=1}^k \sigma_i \tilde{A}_i, 
   \end{equation}
-  and~$A_i^\hmt A_i= \tilde{A}_i^\hmt\tilde{A}_i$ for each~$i$.
-  Consequently, for any distinct~$i$ and~$j$, 
+  and we have~$A_i^\hmt A_i= \tilde{A}_i^\hmt\tilde{A}_i$ for each~$i$.
+  For any distinct~$i$ and~$j$, 
   \begin{equation*}
     A_i\tilde{A}_j^\hmt \;=\; (A_iA_i^\hmt A_i)\tilde{A}_j^\hmt 
     \;=\; (A_i\tilde{A}_i^\hmt \tilde{A}_i)\tilde{A}_j^\hmt \;=\; 0,
@@ -1292,7 +1309,7 @@ The following proposition collects various characterizations of partial isometri
   \end{equation}
   According to~\eqref{eq:2dec}, the left-hand side of~\eqref{eq:ddh} is zero.
   Hence~$A_i=\tilde{A}_i$ for each~$i$. Therefore, the two decompositions in~\eqref{eq:2dec} are
-  indeed identical. The proof is complete. 
+  identical. The proof is complete. 
 \end{proof}
 
 Theorem~\ref{th:uniquesvd} is indeed the matrix version of the following theorem. 
@@ -1420,10 +1437,10 @@ restricted domain and image space. This also leads us to Theorem~\ref{th:orthode
 
 \begin{proof}
   We only prove~1.
-  Suppose that~$ W\Sigma Z^\hmt$ is an SVD of~$A$. 
+  Let~$ W\Sigma Z^\hmt$ be an SVD of~$A$. 
 
   Note that the last~$m-n$ rows of~$\Sigma$ are zero. 
-  Let~$\hat{\Sigma}$ be the fist~$n$ rows of~$\Sigma$, and~$\hat{W}$ be the first~$n$ columns
+  Let~$\hat{\Sigma}$ be the first~$n$ rows of~$\Sigma$, and~$\hat{W}$ be the first~$n$ columns
   of~$W$. Then~$A = \hat{W}\hat{\Sigma}Z^\hmt $. Define~$U = \hat{W}Z^\hmt$ and~$P
   = Z\hat{\Sigma} Z^\hmt$. Then~$P$ is positive semidefinite, and
   \begin{equation*}
@@ -1446,7 +1463,7 @@ restricted domain and image space. This also leads us to Theorem~\ref{th:orthode
 \end{proof}
 
 \begin{proposition}[\cite{Fan_Hoffman_1955}]
-  If~$H$ is the Hermitian part of a matrix~$A \in \CC^{n\times n}$. Enumerating the eigenvalues
+  Let~$H$ be the Hermitian part of a matrix~$A \in \CC^{n\times n}$. Enumerating the eigenvalues
   of~$H$ as~$\lambda_1(H) \ge\dots\ge \lambda_n(H)$, and the singular values of~$A$
   as~$\sigma_i(A) \ge\dots\ge \sigma_n(A)$, we have~$\sigma_{i}(A)\ge
   \lambda_i(H)$ for each~$i = 1, \dots, n$.
@@ -1459,7 +1476,7 @@ restricted domain and image space. This also leads us to Theorem~\ref{th:orthode
     x^\hmt H x = \frac{1}{2}x^\hmt (A^\hmt + A)x = \Re(x^\hmt A x) \le |x^\hmt A x|
     = |x^\hmt U P x|\le \|Px\| = (x^\hmt P^2 x)^{\frac{1}{2}} =(x^\hmt A^\hmt A x)^{\frac{1}{2}}.
   \end{equation*}
-  Therefore, applying the Courant-Fischer-Weyl min-max principle, we know that
+  Therefore, by the Courant-Fischer-Weyl min-max principle, we know that
   \begin{equation*}
     \lambda_i(H) \;\le\; \lambda_i(A^\hmt A)^{\frac{1}{2}}\;=\; \sigma_i(A). 
   \end{equation*} 
