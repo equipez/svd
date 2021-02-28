@@ -1343,13 +1343,13 @@ Theorem~\ref{th:uniquesvd} is indeed the matrix version of the following theorem
     \item There is a unique matrix~$A\in \FF^{m\times n}$
    that represents~$T$ under the aforementioned bases of~$X$ and~$Y$ in the sense that 
   \begin{equation*}
-    A C_\sss{X} (x) = C_\sss{Y} T (x) \quad \text{ for all } \quad x\in X.
+    A C_\sss{X} (x) = C_\sss{Y} (T (x)) \quad \text{ for all } \quad x\in X,
   \end{equation*}
-  %meaning that applying~$T$ to~$x$ is equivalent to multiplying its coordinate by~$A$. 
-  Indeed, the $i$-th column of~$A$ is $A_i = C_\sss{Y}T(x_i)$, namely the coordinate of~$T(x_i)$. 
-\item $T = C_\sss{Y}^\inv A C_\sss{X}$, meaning that applying~$T$ to any vector in~$X$ is equivalent to
-  multiplying its coordinate by~$A$ and then using the result as the coordinate to locate a vector in~$Y$.  
-\item $C_\sss{X}(\ker(T)) = \ker(A)$, and~$C_\sss{Y} (\range(T)) = \range(A)$.
+  meaning that applying~$T$ to~$x$ is equivalent to multiplying its coordinate by~$A$. 
+  Indeed, the $i$-th column of~$A$ is $A_i = C_\sss{Y}(T(x_i))$, namely the coordinate of~$T(x_i)$. 
+%\item $T = C_\sss{Y}^\inv A C_\sss{X}$, meaning that applying~$T$ to any vector in~$X$ is equivalent to
+%  multiplying its coordinate by~$A$ and then using the result as the coordinate to locate a vector in~$Y$.  
+%\item $C_\sss{X}(\ker(T)) = \ker(A)$, and~$C_\sss{Y} (\range(T)) = \range(A)$.
 \item $A$ has full row rank if and only if~$T$ is injective; $A$ has full column rank if and only
   if~$T$ is surjective;
   when~$m=n$, $T$ is invertible if and only if~$A$ is invertible, and~$A^\inv$
@@ -1414,7 +1414,7 @@ We can regard any nonzero linear operator as a bijection by restricting its doma
 space.
 SVD tells us that any nonzero linear operator between finite dimensional Hilbert spaces
 can be represented by a positive diagonal matrix under properly chosen orthonormal bases for the
-restricted domain and image space. This also leads us to Theorem~\ref{th:orthodec}. 
+restricted domain and image space. This can also lead us to Theorem~\ref{th:orthodec}. 
 
 
 \section{Examples of applications}
