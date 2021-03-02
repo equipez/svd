@@ -301,9 +301,11 @@ Hong Kong, China ({\tt zaikun.zhang@polyu.edu.hk}).
   to establish the existence of~SVD.
 \end{abstract}
 
-\textbf{Notation}. Throughout the document,~$\|\cdot\|$ stands for the $2$-norm for vectors and matrices. 
-In inline equations, we use the MATLAB-style notation~$[a; b]$ to denote a vertical array 
-with~$a$ and~$b$ being its entries. 
+\textbf{Notation}. Throughout this document, $m$, $n$, $k$, $i$, and~$j$ are positive integers; $r$ is a nonnegative integer. 
+We use $\|\cdot\|$ to denote the $2$-norm for vectors and matrices. 
+In inline equations, the MATLAB-style notation~$[a; b]$ stands for a vertical array 
+with~$a$ and~$b$ being its entries. The identity matrix is represented by~$I$, and it may take
+a subscript to indicate its order when necessary. Given any matrix~$A$, $A_{i,j}$ signifies its~$(i,j)$ entry.
 
 \section{Eigenvalue decomposition}
 
@@ -561,7 +563,7 @@ The proof is complete.
   When Lemma~\ref{lem:jordan} is applied in the proof of Theorem~\ref{th:svd} later, we only need
   the existence of unit vectors~$u\in\CC^{m}$, $v\in\CC^{n}$, and a scalar~$\sigma>0$
   such that~$Av = \sigma u$ and~$A^\hmt u = \sigma v$. The existence can be established in other
-  ways. 
+  ways. Here are two examples.
   \begin{enumerate}[leftmargin=1.5em]
     \item Let~$\sigma = (\lambda_{\max}(AA^\hmt))^{\frac{1}{2}}>0$, $u\in\CC^{m\times m}$ be an eigenvector
       of~$AA^\hmt$ associated with~$\lambda_{\max}(AA^\hmt)$, and~$v\;=\;A^\hmt u/\sigma$.
@@ -714,13 +716,16 @@ The proof is complete.
 
 \begin{lemma}
   \label{lem:uav}
-  Let~$A$, $B$, $U$, and~$V$ be complex matrices of proper sizes so that both~$U^\hmt AV$
+  Let~$A$, $B$, $U$, and~$V$ be complex matrices such that both~$U^\hmt AV$
   and~$UBV^\hmt$ are well defined.
-  Suppose that~$\|A\|_\fro=\|B\|_\fro$ and~$\|U\|=\|V\|=1$, then $A = UBV^\hmt$ if and only if
+  If~$\|A\|_\fro=\|B\|_\fro$ and~$\|U\|\|V\|=1$, then $A = UBV^\hmt$ if and only if
   $B = U^\hmt A V$.
 \end{lemma}
 
 \begin{proof}
+  Without loss of generality, we suppose that~$\|U\|=\|V\|=1$. Otherwise, consider~$U/\|U\|$
+  and~$V/\|V\|$ instead of~$U$ and~$V$ respectively.
+
   Assume that~$A = UBV^\hmt$. Since~$\|U\|=\|V\|=1$ and~$\|A\|_\fro=\|B\|_\fro$, we have
  \begin{equation*}
    \min\{\|UB\|_\fro,\; \|BV^\hmt\|_\fro\}\;\ge\;\|UBV^\hmt\|_\fro\;=\;\|A\|_\fro = \|B\|_\fro.
@@ -1121,7 +1126,7 @@ Lemma~\ref{lem:uav}, but there are other ways to prove it.
     U_1^\hmt U_1 + V_1^\hmt V_1 \;=\;  U_2^\hmt U_2 + V_2^\hmt V_2 \;=\; I_r, \quad U_1\Sigma V_1^\hmt
     - U_2\Sigma V_2^\hmt \;=\; A. 
   \end{equation*}
-  All the equations in~\eqref{eq:Jdec}--\eqref{eq:Uorth} have been justified. The proof is
+  All the equalities in~\eqref{eq:Jdec}--\eqref{eq:Uorth} have been justified. The proof is
   complete.
 \end{proof}
 
