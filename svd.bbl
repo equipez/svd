@@ -38,6 +38,11 @@ R.~Mathias.
 \newblock In L.~Hogben, editor, {\em Handbook of Linear Algebra}. CRC Press,
   Boca Raton, FL, 2013.
 
+\bibitem{Stewart_1993}
+G.~W. Stewart.
+\newblock On the early history of the singular value decomposition.
+\newblock {\em SIAM Rev.}, 35:551--566, 1993.
+
 \bibitem{Trefethen_Bau_1997}
 L.~N. Trefethen and D.~Bau~III.
 \newblock {\em Numerical Linear Algebra}.

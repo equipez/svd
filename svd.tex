@@ -1,5 +1,5 @@
-\documentclass[11pt,a4paper]{article}
-%\documentclass[11pt,a4paper,draft]{article}
+%\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper,draft]{article}
 
 \voffset=-1.5cm \hoffset=-1.4cm \textwidth=16cm \textheight=22.0cm
 
@@ -513,6 +513,15 @@ The proof is complete.
 
 \subsection{Existence of SVD}
 
+Here we present three independent ways of establishing the existence of 
+singular value decomposition (see~Theorems~\ref{th:svd}, \ref{th:ey}, \ref{th:lanczos}). 
+They were used by different authors in the history~\cite{Stewart_1993}.  
+Among these three approaches, Jordan's method does not depend on eigenvalue decomposition, but the
+other two do.
+
+Note that it suffices to prove the existence of the compact singular value decomposition, from which
+a singular value decomposition can be constructed easily.
+
 \subsubsection{Jordan's deflation approach~\cite{Jordan_1874}}
 
 \begin{lemma}
@@ -537,12 +546,12 @@ The proof is complete.
   By the Cauchy-Schwarz inequality, there exists a scalar~$\lambda>0$ such
   that~$\lambda u = Av$. Hence%
   \begin{equation*}
-    \sigma \;=\; \Re(u^\hmt Av) \;=\; \Re(\lambda \|x\|^2) \;=\; \lambda.  
+    \sigma \;=\; \Re(u^\hmt Av) \;=\; \Re(\lambda \|u\|^2) \;=\; \lambda.  
   \end{equation*}
   Thus~$Av = \sigma u$. Similarly, we can prove~$A^\hmt u = \sigma v$ using the fact that
   \begin{equation*}
     \Re(u^\hmt A v)\;\ge\; \Re(u^\hmt A\left( A^\hmt u/\|A^\hmt
-    u\|\right)) \;=\; \|A^\hmt x\| = \|A^\hmt u\|\|v\|.
+    u\|\right)) \;=\; \|A^\hmt u\| = \|A^\hmt u\|\|v\|.
   \end{equation*}
 \end{proof}
 
@@ -604,7 +613,7 @@ The proof is complete.
     \label{eq:jordan}
     Av \;=\; \sigma u, \quad A^\hmt u\;=\;\sigma v.
   \end{equation}
-  Let~$U\in \CC^{m\times m}$ be a unitary matrix whose fist column is~$u$, and~$V\in\CC^{n\times n}$
+  Let~$U\in \CC^{m\times m}$ be a unitary matrix whose first column is~$u$, and~$V\in\CC^{n\times n}$
   be a unitary matrix whose first column is~$v$. It is then straightforward to check that
   \begin{equation}
     \label{eq:aind1}
@@ -784,8 +793,8 @@ The major point of the proof is to show that~$U\Lambda^{\frac{1}{2}}V^\hmt =A$. 
 Lemma~\ref{lem:uav}, but there are other ways to prove it. 
 \end{remark}
 
-\begin{theorem}
-  \label{th:eyfull}
+\begin{corollary}
+  \label{coro:eyfull}
   Let~$A \in \CC^{m\times n}$ be a matrix.
   \begin{enumerate}[leftmargin=1.5em]
     \item If~$V\Lambda V^\hmt$ is an eigenvalue decomposition of~$A^\hmt A$ such
@@ -795,7 +804,7 @@ Lemma~\ref{lem:uav}, but there are other ways to prove it.
       that the diagonal entries of~$\Lambda$ are descending. The there exist~$V\in \CC^{n\times n}$
       and~$\Sigma \in \real^{m\times n}$ such that~$U\Sigma V^\hmt$ is a singular value decomposition of~$A$.
   \end{enumerate}
-\end{theorem}
+\end{corollary}
 
 \begin{proof}
   We only prove 1. Suppose that~$\rank(A) = r$. Let~$\hat{\Lambda} = \diag(\Lambda_{1,1}, \dots,
@@ -1168,9 +1177,9 @@ The following proposition collects various characterizations of partial isometri
   There is a~$y \in \range(A^\hmt)$ such that~$x=Ay$. By assumption, $\|y\|=\|x\|$. Hence
     \begin{equation*}
       \|A^\hmt x\| \;\ge\; (y/\|y\|)^\hmt A^\hmt x \;=\; \frac{1}{\|x\|} y^\hmt A^\hmt x \;=\;
-      \frac{1}{x} x^\hmt x\;=\; \|x\|.
+      \frac{1}{\|x\|} x^\hmt x\;=\; \|x\|.
     \end{equation*}
-  For any~$z\in\CC^{n}$, let~$z'$ be its orthogonal projection to~$\range(A^\hmt)$. Then~$\|Az\|\!=\!\|Az'\|\!=\!\|z'\|\!\le\!\|z\|$. Thus 
+  For any~$z\in\CC^{n}$, let~$z'$ be its orthogonal projection on~$\range(A^\hmt)$. Then~$\|Az\|\!=\!\|Az'\|\!=\!\|z'\|\!\le\!\|z\|$. Thus 
     \begin{equation*}
       \|A^\hmt x\| \;=\; \max_{\|z\|=1}z^\hmt A^\hmt x 
       \;\le\; \max_{\|z\|=1}\|Az\|\|x\| \;\le\; \|x\|.
@@ -1180,7 +1189,7 @@ The following proposition collects various characterizations of partial isometri
       only need to prove that~$x^\hmt(A^\hmt A)^2y=x^\hmt A^\hmt Ay$ for any~$x$ and~$y\in \real^n$,
       or equivalently, $u^\hmt A A^\hmt v=u^\hmt v$ for  any~$u$ and~$v\in \range(A)$. By
       assumption,
-      For any~$x$, $y\in\range(A)$, we have $\|A^\hmt u\|=\|u\|$, $\|A^\hmt v\|=\|v\|$, and
+      For any~$u$, $v\in\range(A)$, we have $\|A^\hmt u\|=\|u\|$, $\|A^\hmt v\|=\|v\|$, and
       $\|A^\hmt (u+v)\| = \|u+v\|$. Squaring the last equality, we obtain~$u^\hmt AA^\hmt v = u^\hmt
       v$.
 
@@ -1495,8 +1504,8 @@ restricted domain and image space. This can also lead us to Theorem~\ref{th:orth
 \begin{proof}
   The ``if'' part is trivial. We focus on the ``only if'' part.
   Let~$V \Lambda V^\hmt$ be an eigenvalue decomposition of~$A_1^\hmt A_1 = A_2^\hmt A_2$ such that
-  the diagonal entries of~$\Lambda$ is descending. By
-  Theorem~\ref{th:eyfull}, there exists $W_1$, $W_2\in \CC^{m\times m}$ and~$\Sigma \in \real^{m\times n}$
+  the diagonal entries of~$\Lambda$ are descending. By
+  Corollary~\ref{coro:eyfull}, there exists $W_1$, $W_2\in \CC^{m\times m}$ and~$\Sigma \in \real^{m\times n}$
   such that~$A_1=W_1 \Sigma V^\hmt$ 
   and~$A_2 = W_2 \Sigma V^\hmt$. Set~$U = W_2W_1^\hmt$.
 \end{proof}
