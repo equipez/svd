@@ -1,5 +1,5 @@
 \documentclass[11pt,a4paper]{article}
-%\documentclass[11pt,a4paper,draft]{article}
+%%%%\documentclass[11pt,a4paper,draft]{article}
 
 \voffset=-1.5cm \hoffset=-1.4cm \textwidth=16cm \textheight=22.0cm
 
@@ -104,6 +104,7 @@ urlcolor=darkblue}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}%[section]
 
+\usepackage{microtype}
 % Prevent footnote from running to the next page
 \interfootnotelinepenalty=10000
 % No line break in inline math
@@ -584,8 +585,8 @@ a singular value decomposition can be constructed easily.
       $x\in\CC^{m}$ consist of the first~$m$ entries of~$w$, and~$y\in\CC^{n}$ consist of the
       last~$n$. Then we can verify that~$Ay=\sigma x$ and~$A^\hmt x=\sigma y$.
       Meanwhile, $A(-y) = -\sigma x$, and~$A^\hmt x = -\sigma (-y)$, making~$[x; -y]$ 
-      an eigenvector of~$J$ associated with~$-\sigma \neq \sigma$. Since eigenvectors for
-    different eigenvalues are orthogonal, we have~$x^\hmt x - y^\hmt y= 0$. Thus~$\|x\|=\|y\|$,
+      an eigenvector of~$J$ associated with~$-\sigma \neq \sigma$. Since~$J$ is Hermitian, 
+      we know that~$w$ and~$[x; -y]$ are orthogonal, and hence~$x^\hmt x - y^\hmt y= 0$. Thus~$\|x\|=\|y\|$,
     which are nonzero since~$w\neq 0$. Finally, let~$u = x/\|x\|$ and~$v = y/\|y\|$. 
   \end{enumerate}
 \end{remark}
@@ -1112,7 +1113,7 @@ Lemma~\ref{lem:uav}, but there are other ways to prove it.
     U_1\Sigma V_1^\hmt - U_2\Sigma V_2^\hmt \;=\; A,\\[1ex]
     \label{eq:Uorth}&U_1^\hmt U_1 + V_1^\hmt V_1 \;=\; I_r, \quad 
     U_2^\hmt U_2 + V_2^\hmt V_2 \;=\; I_r, \quad 
-    U_1^\hmt U_2 + V_1^\hmt V_2 \;=\; 0
+    U_1^\hmt U_2 + V_1^\hmt V_2 \;=\; 0.
   \end{empheq}
   Since~$U_1\Sigma V_1^\hmt = -U_2\Sigma V_2^\hmt = A/2$, Theorem~\ref{th:svdunique} implies 
   the existence of a unitary matrix~$W\in \CC^{r\times r}$ such that 
@@ -1179,7 +1180,8 @@ The following proposition collects various characterizations of partial isometri
       \|A^\hmt x\| \;\ge\; (y/\|y\|)^\hmt A^\hmt x \;=\; \frac{1}{\|x\|} y^\hmt A^\hmt x \;=\;
       \frac{1}{\|x\|} x^\hmt x\;=\; \|x\|.
     \end{equation*}
-  For any~$z\in\CC^{n}$, let~$z'$ be its orthogonal projection on~$\range(A^\hmt)$. Then~$\|Az\|\!=\!\|Az'\|\!=\!\|z'\|\!\le\!\|z\|$. Thus 
+  For any~$z\in\CC^{n}$, let~$z'$ be its orthogonal projection on~$\range(A^\hmt)$. 
+  Then~$\|Az\|\!=\!\|Az'\|\!=\!\|z'\|\!\le\!\|z\|$. Thus 
     \begin{equation*}
       \|A^\hmt x\| \;=\; \max_{\|z\|=1}z^\hmt A^\hmt x 
       \;\le\; \max_{\|z\|=1}\|Az\|\|x\| \;\le\; \|x\|.
