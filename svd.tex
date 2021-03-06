@@ -396,7 +396,7 @@ a subscript to indicate its order when necessary. Given any matrix~$A$, $A_{i,j}
 
 \begin{remark}
   Let~$U\Sigma V^\hmt$ be a singular value decomposition of~$A\in \RR^{m\times n}$ and $\sigma_i
-  = \Sigma_{i,i}$, where~$1\le i\le \min\{m,n\}$. Then~\mbox{$\sigma_1$, $\dots$, $\sigma_r$} are called the
+  = \Sigma_{i,i}$, where $1\le i\le \min\{m,n\}$. Then~\mbox{$\sigma_1$, $\dots$, $\sigma_r$} are called the
   \textnormal{(}nonzero\textnormal{)} singular values of~$A$. It is often convenient to 
   regard $\sigma_{r+1}=\cdots=\sigma_{\min\{m,n\}} = 0$ also as singular values of~$A$.
 \end{remark}
@@ -1218,17 +1218,17 @@ The following proposition collects various characterizations of partial isometri
       $\|A^\hmt (u+v)\| = \|u+v\|$. Squaring the last equality, we obtain~$u^\hmt AA^\hmt v = u^\hmt
       v$.
 
-      \ref{it:aha} $\Rightarrow$ \ref{it:ahaah}.~Since~$A^\hmt A$ is a projection, $A^\hmt A x = x$ for all~$x\in \range(A^\hmt A)
+      \ref{it:aha}~$\Rightarrow$~\ref{it:ahaah}.~Since~$A^\hmt A$ is a projection, we have~$A^\hmt A x = x$ for all~$x\in \range(A^\hmt A)
     = \range(A^\hmt)$. Hence~$A^\hmt AA^\hmt = A^\hmt$.
 
-    \ref{it:ahaah} $\Rightarrow$ \ref{it:aah}.~$AA^\hmt$ is Hermitian, and~$(AA^\hmt)^2=AA^\hmt AA^\hmt = AA^\hmt$. 
+    \ref{it:ahaah}~$\Rightarrow$~\ref{it:aah}.~$AA^\hmt$ is Hermitian, and~$(AA^\hmt)^2=AA^\hmt AA^\hmt = AA^\hmt$. 
 
-    \ref{it:aah} $\Rightarrow$ \ref{it:aaha}.~Similar to~\ref{it:aha} $\Rightarrow$ \ref{it:ahaah}.
+    \ref{it:aah}~$\Rightarrow$~\ref{it:aaha}.~Similar to~\ref{it:aha} $\Rightarrow$ \ref{it:ahaah}.
 
-    \ref{it:aaha} $\Rightarrow$ \ref{it:sina}.~Since~$AA^\hmt$ is positive semidefinite 
+    \ref{it:aaha}~$\Rightarrow$~\ref{it:sina}.~Since~$AA^\hmt$ is positive semidefinite 
     and~$(AA^\hmt)^2=AA^\hmt AA^\hmt =AA^\hmt$, we know that all the nonzero eigenvalues of~$AA^\hmt$ are $1$.
 
-    \ref{it:sina} $\Rightarrow$ \ref{it:ai}.~Let~$r=\rank(A)$. If~$r = 0$, then the conclusion is trivially true.
+    \ref{it:sina}~$\Rightarrow$~\ref{it:ai}.~Let~$r=\rank(A)$. If~$r = 0$, then the conclusion is trivially true.
        Otherwise, $A$ has a compact singular value decomposition of the form~$UV^\hmt$,
        where~$U\in\CC^{m\times r}$ and~$V\in\CC^{n\times r}$ satisfy~$U^\hmt U = V^\hmt V = I_r$.
        Note that the columns of~$V$ is an orthonormal basis of~$\range(A^\hmt)$. 
