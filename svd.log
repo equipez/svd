@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.5)  6 MAR 2021 13:50
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.19)  21 MAR 2021 22:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -265,7 +265,7 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/multirow/multirow.st
 y
-Package: multirow 2021/01/29 v2.7 Span multiple rows of a table
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip65
 \multirow@cntb=\count278
 \multirow@dima=\skip66
@@ -1405,7 +1405,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip74
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 74.
+Package hyperref Info: Option `colorlinks' set `true' on input line 79.
 
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/algorithms/algorithm
 .sty
@@ -1476,24 +1476,24 @@ Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 )
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/microtype/microtype.
 sty
-Package: microtype 2021/02/25 v2.8b Micro-typographical refinements (RS)
+Package: microtype 2021/03/14 v2.8c Micro-typographical refinements (RS)
 \MT@toks=\toks62
 \MT@count=\count393
-LaTeX Info: Redefining \textls on input line 788.
+LaTeX Info: Redefining \textls on input line 790.
 \MT@outer@kern=\dimen337
-LaTeX Info: Redefining \textmicrotypecontext on input line 1358.
+LaTeX Info: Redefining \textmicrotypecontext on input line 1374.
 \MT@listname@count=\count394
 
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/microtype/microtype-
 xetex.def
-File: microtype-xetex.def 2021/02/25 v2.8b Definitions specific to xetex (RS)
+File: microtype-xetex.def 2021/03/14 v2.8c Definitions specific to xetex (RS)
 LaTeX Info: Redefining \lsstyle on input line 254.
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/microtype/microtype.
 cfg
-File: microtype.cfg 2021/02/25 v2.8b microtype main configuration file (RS)
+File: microtype.cfg 2021/03/14 v2.8c microtype main configuration file (RS)
 ))
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.st
 y
@@ -1516,9 +1516,9 @@ Package: nccmath 2006/01/20 v1.3 Additional Math Commands (NCC)
 \NCC@fracrulewidth=\dimen343
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathsfit' in version `bold'
-(Font)                  T1/lmss/m/sl --> T1/lmss/b/sl on input line 231.
+(Font)                  T1/lmss/m/sl --> T1/lmss/b/sl on input line 236.
 LaTeX Font Info:    Overwriting math alphabet `\mathlcal' in version `bold'
-(Font)                  U/dutchcal/m/n --> U/dutchcal/b/n on input line 258.
+(Font)                  U/dutchcal/m/n --> U/dutchcal/b/n on input line 263.
 
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/mathalpha/mathalfa.s
 ty)
@@ -1534,31 +1534,31 @@ LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
  (./svd.aux)
 \openout1 = `svd.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 309.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 314.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
-09.
+14.
  (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1601,7 +1601,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 309.
+Package hyperref Info: Link coloring ON on input line 314.
 
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1616,14 +1616,14 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count395
 )
-LaTeX Info: Redefining \ref on input line 309.
-LaTeX Info: Redefining \pageref on input line 309.
-LaTeX Info: Redefining \nameref on input line 309.
+LaTeX Info: Redefining \ref on input line 314.
+LaTeX Info: Redefining \pageref on input line 314.
+LaTeX Info: Redefining \nameref on input line 314.
  (./svd.out) (./svd.out)
 \@outlinefile=\write4
 \openout4 = `svd.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 309.
+LaTeX Info: Redefining \microtypecontext on input line 314.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1639,7 +1639,7 @@ ern Roman (RS)
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 312
+LaTeX Font Info:    Trying to load font information for U+msa on input line 317
 .
  (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1647,7 +1647,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 312
+LaTeX Font Info:    Trying to load font information for U+msb on input line 317
 .
  (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1656,7 +1656,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+bbold on input line 3
-12.
+17.
  (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/bbold/Ubbold.fd)
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
@@ -1666,7 +1666,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 1515) in paragraph at lines 312--312
+Underfull \hbox (badness 1515) in paragraph at lines 317--317
 [][]\TU/lmr/m/n/9 Department of Applied Mathematics, The Hong Kong Polytechnic 
 University, Hong Kong, China
  []
@@ -1676,7 +1676,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (1.97977pt too wide) in paragraph at lines 352--355
+Overfull \hbox (1.97977pt too wide) in paragraph at lines 357--360
 []$\OML/cmm/m/it/10.95 U\OT1/cmr/m/n/10.95 ^^C\OML/cmm/m/it/10.95 U[]$ \TU/lmr/
 m/n/10.95 is called a compact eigenvalue decomposition of $\OML/cmm/m/it/10.95 
 A$\TU/lmr/m/n/10.95 , provided that $\OML/cmm/m/it/10.95 A \OT1/cmr/m/n/10.95 =
@@ -1689,21 +1689,21 @@ A$\TU/lmr/m/n/10.95 , provided that $\OML/cmm/m/it/10.95 A \OT1/cmr/m/n/10.95 =
 ] [2] [3] [4] [5] [6] [7] [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 1169.
+(hyperref)                removing `\@ifnextchar' on input line 1174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1169.
+(hyperref)                removing `subscript' on input line 1174.
 
 [9] [10] [11] [12] [13] (./svd.bbl) [14] (./svd.aux)
 Package rerunfilecheck Info: File `svd.out' has not changed.
 (rerunfilecheck)             Checksum: 268FF03C38814BBBAEE9240734EAF6FB;1495.
  ) 
 Here is how much of TeX's memory you used:
- 44191 strings out of 476966
- 1031184 string characters out of 5817376
- 1515970 words of memory out of 5000000
- 63304 multiletter control sequences out of 15000+600000
+ 44201 strings out of 476957
+ 1031457 string characters out of 5817111
+ 1516198 words of memory out of 5000000
+ 63323 multiletter control sequences out of 15000+600000
  416731 words of font info for 96 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  87i,14n,117p,725b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
