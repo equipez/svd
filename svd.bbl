@@ -14,16 +14,16 @@ Ky~Fan and A.~J. Hoffman.
 L.~Han and M.~Neumann.
 \newblock Inner product spaces, orthogonal projection, least squares, and
   singular value decomposition.
-\newblock In L.~Hogben, editor, {\em Handbook of Linear Algebra}. CRC Press,
-  Boca Raton, FL, 2013.
+\newblock In L.~Hogben, editor, {\em Handbook of Linear Algebra}, pages
+  5--1--5--21. CRC Press, Boca Raton, FL, 2013.
 
 \bibitem{Jordan_1874}
 C.~Jordan.
-\newblock Mémoire sur les formes bilinéaires.
+\newblock M\'{e}moire sur les formes bilin\'{e}aires.
 \newblock {\em J. Math. Pures Appl.}, 19:35--54, 1874.
 
 \bibitem{Koranyi_2001}
-A.~Korányi.
+A.~Kor\'{a}nyi.
 \newblock Around the finite-dimensional spectral theorem.
 \newblock {\em Amer. Math. Monthly}, 108:120--125, 2001.
 
@@ -35,8 +35,8 @@ C.~Lanczos.
 \bibitem{Mathias_2013}
 R.~Mathias.
 \newblock Singular values and singular value inequalities.
-\newblock In L.~Hogben, editor, {\em Handbook of Linear Algebra}. CRC Press,
-  Boca Raton, FL, 2013.
+\newblock In L.~Hogben, editor, {\em Handbook of Linear Algebra}, pages
+  24--1--24--16. CRC Press, Boca Raton, FL, 2013.
 
 \bibitem{Stewart_1993}
 G.~W. Stewart.
@@ -44,7 +44,7 @@ G.~W. Stewart.
 \newblock {\em SIAM Rev.}, 35:551--566, 1993.
 
 \bibitem{Trefethen_Bau_1997}
-L.~N. Trefethen and D.~Bau~III.
+L.~N Trefethen and D.~Bau~III.
 \newblock {\em Numerical Linear Algebra}.
 \newblock SIAM, Philadelphia, 1997.
 

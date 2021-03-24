@@ -1,0 +1,50 @@
+
+Result of ref-svd.bib
+
+===> Non-ASCII characters:
+
+51:  title =         {Mémoire sur les formes bilinéaires},
+57:  author =        {Korányi, A.},
+
+--------------------------------------------------
+
+===> Capital letters that need to be protected by curly braces:
+
+
+--------------------------------------------------
+
+===> Message from python /home/zaikunzhang/local/textools/bibtex_check.py:
+
+--> 'Eckart_Young_1939' 
+flawed name: abbreviated journal title 'Bull. Amer. Math. Soc.'
+
+--> 'Fan_Hoffman_1955' 
+flawed name: abbreviated journal title 'Proc. Amer. Math. Soc.'
+
+--> 'Han_Neumann_2013' 
+missing field 'pages'
+
+--> 'Jordan_1874' 
+flawed name: abbreviated journal title 'J. Math. Pures Appl.'
+
+--> 'Koranyi_2001' 
+flawed name: abbreviated journal title 'Amer. Math. Monthly'
+
+--> 'Lanczos_1958' 
+flawed name: abbreviated journal title 'Amer. Math. Monthly'
+
+--> 'Mathias_2013' 
+missing field 'pages'
+
+--> 'Stewart_1993' 
+flawed name: abbreviated journal title 'SIAM Rev.'
+
+--------------------------------------------------
+
+===> Message from biber:
+
+******** Difference between the new bib and the original one ********
+
+
+If the original bib file is different from the new one, its backup can be found at
+./backup//%home%zaikunzhang%Work%finished%svd%ref-svd.bib-2021.03.24-11.14.10

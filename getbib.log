@@ -1,0 +1,26 @@
+*************************** checkbib.log ****************************
+
+Result of checking svd.bib
+
+===> Non-ASCII characters:
+
+
+--------------------------------------------------
+
+===> Capital letters that need to be protected by curly braces:
+
+
+--------------------------------------------------
+
+===> Message from python /home/zaikunzhang/local/textools/bibtex_check.py:
+
+--------------------------------------------------
+
+===> Message from biber:
+
+
+******** Difference between the new bib and the original one ********
+
+
+If the original bib file is different from the new one, its backup can be found at
+./backup//%home%zaikunzhang%Work%finished%svd%svd.bib-2021.03.24-11.34.32

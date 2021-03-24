@@ -1,0 +1,100 @@
+% bib file for svd.tex generated at 2021.03.24-11.11.46.
+%
+% The recommended format of the bib entry label is:
+%
+%     <AuthorLastnames_YearLetter>
+%
+%  For example, the key for an article by Yuan may be:
+%
+%     Yuan_2000a
+%
+% It is advised to use the abbreviations of names of serials in Math. Rev.
+% See https://mathscinet.ams.org/msnhtml/serials.pdf .
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+@article{Eckart_Young_1939,
+  author =        {Eckart, C. and Young, G.},
+  journal =       {Bull. Amer. Math. Soc.},
+  pages =         {118--121},
+  title =         {A principal axis transformation for non-{H}ermitian
+                   matrices},
+  volume =        {45},
+  year =          {1939},
+}
+
+@article{Fan_Hoffman_1955,
+  author =        {Fan, Ky and Hoffman, A. J.},
+  journal =       {Proc. Amer. Math. Soc.},
+  pages =         {111--116},
+  title =         {Some metric inequalities in the space of matrices},
+  volume =        {6},
+  year =          {1955},
+}
+
+@incollection{Han_Neumann_2013,
+  address =       {Boca Raton, FL},
+  author =        {Han, L. and Neumann, M.},
+  booktitle =     {Handbook of Linear Algebra},
+  editor =        {Hogben, L.},
+  publisher =     {CRC Press},
+  title =         {Inner Product Spaces, Orthogonal Projection, Least
+                   Squares, and Singular Value Decomposition},
+  year =          {2013},
+}
+
+@article{Jordan_1874,
+  author =        {Jordan, C.},
+  journal =       {J. Math. Pures Appl.},
+  pages =         {35--54},
+  title =         {Mémoire sur les formes bilinéaires},
+  volume =        {19},
+  year =          {1874},
+}
+
+@article{Koranyi_2001,
+  author =        {Korányi, A.},
+  journal =       {Amer. Math. Monthly},
+  pages =         {120--125},
+  title =         {Around the finite-dimensional spectral theorem},
+  volume =        {108},
+  year =          {2001},
+}
+
+@article{Lanczos_1958,
+  author =        {Lanczos, C.},
+  journal =       {Amer. Math. Monthly},
+  pages =         {665--679},
+  title =         {Linear Systems in Self-Adjoint Form},
+  volume =        {65},
+  year =          {1958},
+}
+
+@incollection{Mathias_2013,
+  address =       {Boca Raton, FL},
+  author =        {Mathias, R.},
+  booktitle =     {Handbook of Linear Algebra},
+  editor =        {Hogben, L.},
+  publisher =     {CRC Press},
+  title =         {Singular Values and Singular Value Inequalities},
+  year =          {2013},
+}
+
+@article{Stewart_1993,
+  author =        {Stewart, G. W.},
+  journal =       {SIAM Rev.},
+  pages =         {551--566},
+  title =         {On the early history of the singular value
+                   decomposition},
+  volume =        {35},
+  year =          {1993},
+}
+
+@book{Trefethen_Bau_1997,
+  address =       {Philadelphia},
+  author =        {Trefethen, L. N. and Bau III, D.},
+  publisher =     {SIAM},
+  title =         {Numerical Linear Algebra},
+  year =          {1997},
+}
