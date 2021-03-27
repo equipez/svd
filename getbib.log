@@ -1,6 +1,5 @@
 *************************** checkbib.log ****************************
-
-Result of checking svd.bib
+Result of checking svd.bib in BibTeX mode
 
 ===> Non-ASCII characters:
 
@@ -12,7 +11,7 @@ Result of checking svd.bib
 
 --------------------------------------------------
 
-===> Message from python /home/zaikunzhang/local/textools/bibtex_check.py:
+===> Message from python /home/zaikunzhang/local/textools/python/bibtex_check.py -b:
 
 --------------------------------------------------
 
@@ -21,6 +20,14 @@ Result of checking svd.bib
 
 ******** Difference between the new bib and the original one ********
 
+87c87
+<     author    = {Trefethen, L. N. and Bau III, D.},
+---
+>     author    = {Trefethen, L. N and Bau III, D.},
+91c91
+<     year      = {1997},
+---
+>     year   = {1997},
 
 If the original bib file is different from the new one, its backup can be found at
-./backup//%home%zaikunzhang%Work%finished%svd%svd.bib-2021.03.24-11.34.32
+./backup//%home%zaikunzhang%Work%finished%svd%svd.bib-2021.03.27-23.08.17

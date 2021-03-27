@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.19)  24 MAR 2021 11:23
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.26)  27 MAR 2021 23:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -136,11 +136,11 @@ Package: empheq 2017/03/31 v2.15 Emphasizing equations
 
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/mathtools/mhsetup.st
 y
-Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/mathtools/mathtools.
 sty
-Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
+Package: mathtools 2021/03/18 v1.25 mathematical typesetting tools
  (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count198
@@ -310,7 +310,7 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/datetime2/datetime2.
 sty
-Package: datetime2 2020/03/02 v1.5.6 (NLCT) date and time formats
+Package: datetime2 2021/03/21 v1.5.7 (NLCT) date and time formats
 
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/tracklang/tracklang.
 sty
@@ -689,7 +689,7 @@ Package: expl3 2021-02-18 L3 programming layer (loader)
 
 (/home/zaikunzhang/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-
 xetex.def
-File: l3backend-xetex.def 2021-03-02 L3 backend support: XeTeX
+File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
  (|extractbb --version)
 \c__kernel_sys_dvipdfmx_version_int=\count310
 \l__color_backend_stack_int=\count311
@@ -1700,10 +1700,10 @@ Package rerunfilecheck Info: File `svd.out' has not changed.
 (rerunfilecheck)             Checksum: 268FF03C38814BBBAEE9240734EAF6FB;1495.
  ) 
 Here is how much of TeX's memory you used:
- 44201 strings out of 476957
- 1031457 string characters out of 5817111
- 1516194 words of memory out of 5000000
- 63323 multiletter control sequences out of 15000+600000
+ 44202 strings out of 476957
+ 1031479 string characters out of 5817111
+ 1516285 words of memory out of 5000000
+ 63324 multiletter control sequences out of 15000+600000
  416731 words of font info for 96 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  87i,14n,117p,725b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
