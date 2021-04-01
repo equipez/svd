@@ -1,4 +1,4 @@
-% bib file generated according to svd.aux at 2021.04.01-09.50.17.
+% bib file for svd.tex generated at 2021.03.27-23.08.17.
 %
 % The recommended format of the bib entry label is:
 %
@@ -22,15 +22,6 @@
 @string{sirev = "SIAM Rev."}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%MACRO_END%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-@article{Eckart_Young_1939,
-    author  = {Eckart, C. and Young, G.},
-    journal = bams,
-    pages   = {118--121},
-    title   = {A principal axis transformation for non-{H}ermitian matrices},
-    volume  = {45},
-    year    = {1939},
-}
 
 @article{Fan_Hoffman_1955,
     author  = {Fan, Ky and Hoffman, A. J.},
@@ -97,4 +88,12 @@
     title   = {On the early history of the singular value decomposition},
     volume  = {35},
     year    = {1993},
+}
+
+@book{Trefethen_Bau_1997,
+    author    = {Trefethen, L. N. and Bau III, D.},
+    publisher = {SIAM},
+    address   = {Philadelphia},
+    title     = {Numerical Linear Algebra},
+    year      = {1997},
 }

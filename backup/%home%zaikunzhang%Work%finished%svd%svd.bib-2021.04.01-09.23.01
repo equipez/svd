@@ -1,4 +1,4 @@
-% bib file generated according to svd.aux at 2021.04.01-09.50.17.
+% bib file generated according to svd.aux at 2021.04.01-09.11.29.
 %
 % The recommended format of the bib entry label is:
 %
@@ -22,6 +22,83 @@
 @string{sirev = "SIAM Rev."}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%MACRO_END%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+
+@article{Fan_Hoffman_1955,
+    author  = {Fan, Ky and Hoffman, A. J.},
+    journal = pams,
+    pages   = {111--116},
+    title   = {Some metric inequalities in the space of matrices},
+    volume  = {6},
+    year    = {1955},
+}
+
+@incollection{Han_Neumann_2013,
+    author    = {Han, L. and Neumann, M.},
+    editor    = {Hogben, L.},
+    publisher = {CRC Press},
+    address   = {Boca Raton, FL},
+    booktitle = {Handbook of Linear Algebra},
+    pages     = {5-1--5-21},
+    title     = {Inner Product Spaces, Orthogonal Projection, Least Squares, and Singular Value Decomposition},
+    year      = {2013},
+}
+
+@article{Jordan_1874,
+    author  = {Jordan, C.},
+    journal = jmpa,
+    pages   = {35--54},
+    title   = {M\'{e}moire sur les formes bilin\'{e}aires},
+    volume  = {19},
+    year    = {1874},
+}
+
+@article{Koranyi_2001,
+    author  = {Kor\'{a}nyi, A.},
+    journal = amm,
+    pages   = {120--125},
+    title   = {Around the finite-dimensional spectral theorem},
+    volume  = {108},
+    year    = {2001},
+}
+
+@article{Lanczos_1958,
+    author  = {Lanczos, C.},
+    journal = amm,
+    pages   = {665--679},
+    title   = {Linear Systems in Self-Adjoint Form},
+    volume  = {65},
+    year    = {1958},
+}
+
+@incollection{Mathias_2013,
+    author    = {Mathias, R.},
+    editor    = {Hogben, L.},
+    publisher = {CRC Press},
+    address   = {Boca Raton, FL},
+    booktitle = {Handbook of Linear Algebra},
+    pages     = {24-1--24-16},
+    title     = {Singular Values and Singular Value Inequalities},
+    year      = {2013},
+}
+
+@article{Stewart_1993,
+    author  = {Stewart, G. W.},
+    journal = sirev,
+    pages   = {551--566},
+    title   = {On the early history of the singular value decomposition},
+    volume  = {35},
+    year    = {1993},
+}
+
+@book{Trefethen_Bau_1997,
+    author    = {Trefethen, L. N. and Bau III, D.},
+    publisher = {SIAM},
+    address   = {Philadelphia},
+    title     = {Numerical Linear Algebra},
+    year      = {1997},
+}
 
 @article{Eckart_Young_1939,
     author  = {Eckart, C. and Young, G.},
@@ -97,4 +174,12 @@
     title   = {On the early history of the singular value decomposition},
     volume  = {35},
     year    = {1993},
+}
+
+@book{Trefethen_Bau_1997,
+    author    = {Trefethen, L. N. and Bau III, D.},
+    publisher = {SIAM},
+    address   = {Philadelphia},
+    title     = {Numerical Linear Algebra},
+    year      = {1997},
 }
