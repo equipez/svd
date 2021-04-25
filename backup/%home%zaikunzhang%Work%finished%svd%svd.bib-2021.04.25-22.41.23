@@ -1,4 +1,4 @@
-% bib file generated according to svd.aux at 2021.04.25-22.41.23.
+% bib file generated according to svd.aux at 2021.04.25-22.39.14.
 %
 % The recommended format of the bib entry label is:
 %
@@ -19,7 +19,6 @@
 @string{bams = "Bull. Amer. Math. Soc."}
 @string{jmpa = "J. Math. Pures Appl."}
 @string{pams = "Proc. Amer. Math. Soc."}
-@string{sirev = "SIAM Rev."}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%MACRO_END%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -27,7 +26,7 @@
     author  = {Eckart, C. and Young, G.},
     journal = bams,
     pages   = {118--121},
-    title   = {A principal axis transformation for non-{Hermitian} matrices},
+    title   = {A principal axis transformation for non-{H}ermitian matrices},
     volume  = {45},
     year    = {1939},
 }
@@ -88,15 +87,6 @@
     pages     = {24-1--24-16},
     title     = {Singular Values and Singular Value Inequalities},
     year      = {2013},
-}
-
-@article{Stewart_1993,
-    author  = {Stewart, G. W.},
-    journal = sirev,
-    pages   = {551--566},
-    title   = {On the early history of the singular value decomposition},
-    volume  = {35},
-    year    = {1993},
 }
 
 @book{Trefethen_Bau_1997,

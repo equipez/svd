@@ -19,3 +19,22 @@ Result of checking /home/zaikunzhang/Work/finished/svd/svd.bib in BibTeX mode
 
 
 ******** Difference between the new bib and the original one ********
+7d6
+< @string{sirev = "SIAM Rev."}
+14c13
+<     title   = {A principal axis transformation for non-{Hermitian} matrices},
+---
+>     title   = {A principal axis transformation for non-{H}ermitian matrices},
+75,83d73
+< }
+< 
+< @article{Stewart_1993,
+<     author  = {Stewart, G. W.},
+<     journal = sirev,
+<     pages   = {551--566},
+<     title   = {On the early history of the singular value decomposition},
+<     volume  = {35},
+<     year    = {1993},
+
+A copy of the original bib file is saved at
+./backup//%home%zaikunzhang%Work%finished%svd%svd.bib-2021.04.25-22.41.23
