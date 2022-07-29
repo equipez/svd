@@ -10,21 +10,26 @@ Result of checking /home/zaikunzhang/Work/finished/svd/svd.bib in BibTeX mode
 
 --------------------------------------------------
 ===> Message from biber:
-ERROR - BibTeX subsystem: /tmp/biber_tmp_XQQj/5f460d2608d83e4236e9addff19a4011_606488.utf8, line 33, syntax error: found "address", expected end of entry ("}" or ")") (
 
 ******** Difference between the new bib and the original one ********
-7d6
-< @string{set="Software Environ. Tools"}
-10,18d8
-< 
-< @book{Bai_etal_2000,
-<   title={Templates for the Solution of Algebraic Eigenvalue Problems: A Practical Guide},
-<   author={Bai, Z. and Demmel, J. and Dongarra, J. and Ruhe, A. and {van der Vorst}, H.},
-<   year={2000},
-<   series = set,
-<   publisher={SIAM}
-<   address ={Philadelphia}
-< }
+7c7
+< @string{set = "Software Environ. Tools"}
+---
+> @string{set="Software Environ. Tools"}
+12,17c12,17
+<     author    = {Bai, Z. and Demmel, J. and Dongarra, J. and Ruhe, A. and {van der Vorst}, H.},
+<     publisher = {SIAM},
+<     address   = {Philadelphia},
+<     series    = set,
+<     title     = {Templates for the Solution of Algebraic Eigenvalue Problems: A Practical Guide},
+<     year      = {2000},
+---
+>   title={Templates for the Solution of Algebraic Eigenvalue Problems: A Practical Guide},
+>   author={Bai, Z. and Demmel, J. and Dongarra, J. and Ruhe, A. and {van der Vorst}, H.},
+>   year={2000},
+>   series = set,
+>   publisher={SIAM}
+>   address ={Philadelphia}
 
 A copy of the original bib file is saved at
-./backup//%home%zaikunzhang%Work%finished%svd%svd.bib-2022.07.29-14.52.08
+./backup//%home%zaikunzhang%Work%finished%svd%svd.bib-2022.07.30-00.32.50
