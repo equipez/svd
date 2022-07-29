@@ -328,7 +328,8 @@ Jordan-Wielandt matrix
 We use $\|\cdot\|$ to denote the $2$-norm for vectors and matrices.
 In inline equations, the MATLAB-style notation~$[a; b]$ stands for a vertical array
 with~$a$ and~$b$ being its entries. The identity matrix is represented by~$I$, and it may take
-a subscript to indicate its order when necessary. Given any matrix~$A$, $A_{i,j}$ signifies its~$(i,j)$ entry.
+a subscript to indicate its order when necessary. Given any matrix~$A$, we use $A_{i,j}$ to signify
+its~$(i,j)$ entry.
 
 \section{Eigenvalue decomposition}
 
@@ -346,15 +347,15 @@ a subscript to indicate its order when necessary. Given any matrix~$A$, $A_{i,j}
 
 \begin{definition}
   \label{def:evd}
-  Let~$A\in \CC^{n\times n}$ be an Hermitian matrix.
+  Suppose that~$A\in \CC^{n\times n}$ is an Hermitian matrix and~$A = U\Lambda U^\hmt$.
   \begin{enumerate}[leftmargin=1.5em]
     \item
-      $U\Lambda U^\hmt$ is called an eigenvalue decomposition of~$A$, provided that~$A = U \Lambda U^\hmt$, $U
+      $U\Lambda U^\hmt$ is called an eigenvalue decomposition of~$A$, provided that~$U
       \in \CC^{n\times n}$ is a unitary matrix, and~$\Lambda \in \RR^{n\times n}$ is a diagonal
       matrix.
     \item
       $U\Lambda U^\hmt$ is called a compact eigenvalue decomposition of~$A$,
-      provided that~$A = U \Lambda U^\hmt$, $U \in \CC^{n\times r}$ is a matrix with~$U^\hmt U = I_r$,
+      provided that~$U \in \CC^{n\times r}$ is a matrix with~$U^\hmt U = I_r$,
       and~$\Lambda \in \RR^{r\times r}$ is a diagonal matrix whose diagonal entries are nonzero.
   \end{enumerate}
 \end{definition}
@@ -382,31 +383,35 @@ a subscript to indicate its order when necessary. Given any matrix~$A$, $A_{i,j}
 
 \begin{definition}
   \label{def:svd}
-  Let~$A\in \CC^{m\times n}$ be a matrix with~$\rank(A) = r$.
+  Suppose that~$A\in \CC^{m\times n}$ is a matrix with~$\rank(A) = r$, and~$A = U\Sigma V^\hmt$.
   \begin{enumerate}[leftmargin=1.5em]
     \item
       $U\Sigma V^\hmt$ is called an singular value decomposition of~$A$,
-      provided that~$A = U \Sigma V^\hmt$, $U
-      \in \CC^{m\times m}$ and~$V\in\CC^{n\times n}$ are unitary matrices, and~$\Sigma \in
-      \RR^{m\times n}$ is a matrix whose first~$r$ diagonal entries~(if~$r\ge 1$) are positive
-      while all the other entries are zero.
+      provided that~$U \in \CC^{m\times m}$ and~$V\in\CC^{n\times n}$ are unitary matrices,
+      and~$\Sigma \in \RR^{m\times n}$ is a matrix whose first~$r$ diagonal entries~(if~$r\ge 1$)
+      are positive while all the other entries are zero.
     \item
-      When~$r \ge 1$, $U\Sigma V^\hmt$ is called a compact (or \emph{reduced}) singular value decomposition of~$A$,
-      provided that~$A = U \Sigma V^\hmt$, $U \in \CC^{m\times r}$ and~$V\in \CC^{n\times r}$
-      satisfy~$U^\hmt U = V^\hmt V = I_r$,
+      When~$r \ge 1$, $U\Sigma V^\hmt$ is called a compact singular value decomposition of~$A$,
+      provided that~$U \in \CC^{m\times r}$ and~$V\in \CC^{n\times r}$ satisfy~$U^\hmt U = V^\hmt V = I_r$,
       and~$\Sigma \in \RR^{r\times r}$ is a diagonal matrix whose diagonal entries are positive.
+  \item When~$m\ge n$, $U\Sigma V^\hmt$ is called a thin (or economy-sized) singular value
+      decomposition of~$A$,
+      provided that~$U \in \CC^{m\times n}$ and~$V\in \CC^{n\times n}$ satisfy~$U^\hmt U = V^\hmt V = I_n$,
+      and~$\Sigma \in \RR^{m\times m}$ is a matrix whose first~$r$ diagonal entries~(if~$r\ge 1$)
+      are positive while all the other entries are zero.
+      When~$n\ge m$, a thin singular value decomposition can be defined similarly.
   \end{enumerate}
 \end{definition}
 
 \begin{remark}
-  Let~$U\Sigma V^\hmt$ be a singular value decomposition of~$A\in \RR^{m\times n}$ and $\sigma_i
+  Let~$U\Sigma V^\hmt$ be an SVD of~$A\in \RR^{m\times n}$ and $\sigma_i
   = \Sigma_{i,i}$, where $1\le i\le \min\{m,n\}$. Then~\mbox{$\sigma_1$, $\dots$, $\sigma_r$} are called the
   \textnormal{(}nonzero\textnormal{)} singular values of~$A$. It is often convenient to
   regard $\sigma_{r+1}=\cdots=\sigma_{\min\{m,n\}} = 0$ also as singular values of~$A$.
 \end{remark}
 
 \begin{remark}
-If~$U\Sigma V^\hmt$ is a \textnormal{(}compact\textnormal{)} singular value decomposition
+If~$U\Sigma V^\hmt$ is a \textnormal{(}compact\textnormal{)} SVD
 of~$A$, then~$AV = U\Sigma$ and~$A^\hmt U = V\Sigma$.
 Let~$\sigma_i=\Sigma_{i,i}$, $u_i$ be the~$i$-th column of~$U$,
 and~$v_i$ be the~$i$-th column of~$V$.
@@ -416,8 +421,8 @@ singular value~$\sigma_{i}$.
 \end{remark}
 
 \begin{remark}
-  If~$U \Sigma V^\hmt$ is a compact singular value decomposition of~$A \in \CC^{m\times n}$,
-  then we can extend it to a singular value decomposition
+  If~$U \Sigma V^\hmt$ is a compact SVD of~$A \in \CC^{m\times n}$,
+  then we can extend it to an SVD
   \begin{equation*}
     (U \; \tilde{U})
     \begin{pmatrix}
@@ -431,16 +436,22 @@ singular value~$\sigma_{i}$.
   \end{equation*}
   where~$\tilde{U}\in \CC^{m\times(m-r)}$ is any matrix such that~$(U \; \tilde{U})$ is unitary,
   and~$\tilde{V} \in \CC^{n\times (n-r)}$ is any matrix such that~$(V \; \tilde{V})$ is unitary.
-  Conversely, if~$U\Sigma V^\hmt$ is a singular value decomposition of~$A\neq 0$, we can obtain a compact
-  singular value decomposition by dropping the zero diagonal entries of~$\Sigma$ and the
+  Conversely, if~$U\Sigma V^\hmt$ is an SVD of~$A\neq 0$, we can obtain a compact
+  SVD by dropping the zero diagonal entries of~$\Sigma$ and the
   corresponding columns of~$U$ and~$V$.
+\end{remark}
+
+\begin{remark}
+    The terms \emph{thin} SVD, \emph{economy-sized} SVD, and \emph{compact} SVD are adopted
+    from~\cite[Section~6.1]{Bai_etal_2000}.  In~\cite[Lecture~4]{Trefethen_Bau_1997}, a thin
+    SVD is called a \emph{reduced} SVD instead.
 \end{remark}
 
 
 \subsection{Uniqueness of (compact) SVD}
 
 \begin{theorem}
- Suppose that~$U\Sigma V^\hmt$ be a compact singular value decomposition of a matrix~$A$.
+ Suppose that~$U\Sigma V^\hmt$ is a compact SVD of a matrix~$A$.
  \begin{enumerate}[leftmargin=1.5em]
    \item $U\Sigma^2 U^\hmt$ is a compact eigenvalue decomposition of~$AA^\hmt$,
      and hence the diagonal entries of~$\Sigma^2$ are the positive eigenvalues of~$AA^\hmt$, multiplicity included.
@@ -539,13 +550,12 @@ The proof is complete.
 \subsection{Existence of SVD}
 
 Here we present three independent ways of establishing the existence of
-singular value decomposition (see~Theorems~\ref{th:svd}, \ref{th:ey}, \ref{th:lanczos}).
+SVD~(see~Theorems~\ref{th:svd}, \ref{th:ey}, \ref{th:lanczos}).
 They were used by different authors in the history~\cite{Stewart_1993}.
 Among these three approaches, Jordan's method does not depend on eigenvalue decomposition, but the
 other two do.
 
-Note that it suffices to prove the existence of the compact singular value decomposition, from which
-a singular value decomposition can be constructed easily.
+Note that it suffices to prove the existence of the compact SVD, from which an SVD can be constructed easily.
 
 \subsubsection{Jordan's deflation approach~\cite{Jordan_1874}}
 
@@ -617,7 +627,7 @@ a singular value decomposition can be constructed easily.
 
 \begin{theorem}
   \label{th:svd}
-  Any~$A\in\CC^{m\times n}$ has a singular value decomposition~$U\Sigma V^\hmt$
+  Any~$A\in\CC^{m\times n}$ has an SVD~$U\Sigma V^\hmt$
   as defined in Definition~\ref{def:svd}.
 \end{theorem}
 
@@ -626,7 +636,7 @@ a singular value decomposition can be constructed easily.
 
   1.~If~$\min\{m, n\} = 1$, then~$A$ is either a row or a column. If~$A$ is a column, let
   $U$ be a unitary matrix whose first column is~$A/\|A\|$, $\Sigma = e_1$ (\ie, the first canonical
-  coordinate vector), and~$V = \|A\|$. Then~$U\Sigma V^\hmt$ is a singular value decomposition
+  coordinate vector), and~$V = \|A\|$. Then~$U\Sigma V^\hmt$ is an SVD
   of~$A$. If~$A$ is a row, the decomposition can be found similarly.
 
   2.~Assume that the conclusion holds when~$\min\{m,n\}= k$. Let us consider the scenario where
@@ -649,10 +659,10 @@ a singular value decomposition can be constructed easily.
     \end{pmatrix},
   \end{equation}
   where~$\hat{A}$ is a matrix in~$\CC^{(m-1)\times (n-1)}$. If~$\hat{A} = 0$, then~\eqref{eq:aind1}
-  provides a singular value decomposition for~$A$.
+  provides an SVD of~$A$.
   Otherwise, since~$\min\{m-1, n-1\} = \min\{m,n\}-1$, we
-  know from the induction hypothesis that~$\hat{A}$ has a singular value
-  decomposition~$\hat{U}\hat{\Sigma} \hat{V}^\hmt$. Consequently,
+  know from the induction hypothesis that~$\hat{A}$ has an SVD~$\hat{U}\hat{\Sigma} \hat{V}^\hmt$.
+  Consequently,
   \begin{equation}
     \label{eq:aind2}
     A \;=\; U (U^\hmt A V)V^\hmt
@@ -683,8 +693,8 @@ a singular value decomposition can be constructed easily.
   \,V^\hmt
 \right].
   \end{equation}
-  It is easy to verify that the right-hand side of~\eqref{eq:aind2} provides a singular value
-  decomposition for~$A$. This completes the induction.
+  It is easy to verify that the right-hand side of~\eqref{eq:aind2} provides an SVD of~$A$.
+  This completes the induction.
 \end{proof}
 
 \begin{remark}
@@ -696,7 +706,7 @@ a singular value decomposition can be constructed easily.
   \ker(\hat{A})$ and~$v\in\ker(\hat{A})$. Since~$v\in\range(A^\hmt)\perp \ker(A)$, we know
   that~$\dim\ker(\hat{A})\ge \dim\ker(A)+1$. Thus~$\rank(\hat{A}) \le \rank(A)-1$.
   If~$\hat{A} = 0$, we are done. Otherwise, by the induction
-  hypothesis,~$\hat{A}$ has a compact singular value decomposition~$\hat{U}\hat{\Sigma}\hat{V}^\hmt$.
+  hypothesis,~$\hat{A}$ has a compact SVD~$\hat{U}\hat{\Sigma}\hat{V}^\hmt$.
   Consequently,
   \begin{equation}
     \label{eq:aind3}
@@ -712,8 +722,7 @@ a singular value decomposition can be constructed easily.
   Noting that~$\hat{A}v = 0$, $\hat{A}^\hmt u = 0$, and~$\hat{\Sigma}$ is nonsingular, we can see
   that~$\hat{V}^\hmt v = 0$ and~$\hat{U}^\hmt u  = 0$. Thus the columns of~$(u\,\;\hat{U})$ are
   orthonormal, and so are those of~$(v\,\; \hat{V})$. Hence~\eqref{eq:aind3} provides a compact
-  singular value decomposition for~$A$, which can be extended to a singular value decomposition. The
-  induction is complete.
+  SVD for~$A$, which can be extended to an SVD. The induction is complete.
 \end{remark}
 
 
@@ -781,9 +790,9 @@ a singular value decomposition can be constructed easily.
   Let~$A \in \CC^{m\times n}$ be a matrix.
   \begin{enumerate}[leftmargin=1.5em]
   \item If~$V\Lambda V^\hmt$ is a compact eigenvalue decomposition of~$A^\hmt A$ and~$U = AV\Lambda^{-\frac{1}{2}}$,
-    then~$U\Lambda^\frac{1}{2} V^\hmt$ is a compact singular value decomposition of~$A$.
+    then~$U\Lambda^\frac{1}{2} V^\hmt$ is a compact SVD of~$A$.
   \item If~$U\Lambda U^\hmt$ is a compact eigenvalue decomposition of~$AA^\hmt$ and~$V = A^\hmt U\Lambda^{-\frac{1}{2}}$,
-    then~$U\Lambda^\frac{1}{2} V^\hmt$ is a compact singular value decomposition of~$A$.
+    then~$U\Lambda^\frac{1}{2} V^\hmt$ is a compact SVD of~$A$.
   \end{enumerate}
 \end{theorem}
 
@@ -810,7 +819,7 @@ a singular value decomposition can be constructed easily.
     %\label{eq:Adec}
     A \;=\; U\Lambda^{\frac{1}{2}}V^\hmt.
   \end{equation}
-  Hence~$U\Lambda^{\frac{1}{2}}V^\hmt$ is a compact singular value decomposition of~$A$.
+  Hence~$U\Lambda^{\frac{1}{2}}V^\hmt$ is a compact SVD of~$A$.
 \end{proof}
 
 \begin{remark}
@@ -824,10 +833,10 @@ Lemma~\ref{lem:uav}, but there are other ways to prove it.
   \begin{enumerate}[leftmargin=1.5em]
     \item If~$V\Lambda V^\hmt$ is an eigenvalue decomposition of~$A^\hmt A$ such
       that the diagonal entries of~$\Lambda$ are descending. The there exist~$U\in \CC^{m\times m}$
-      and~$\Sigma \in \RR^{m\times n}$ such that~$U\Sigma V^\hmt$ is a singular value decomposition of~$A$.
+      and~$\Sigma \in \RR^{m\times n}$ such that~$U\Sigma V^\hmt$ is an SVD of~$A$.
     \item If~$U\Lambda U^\hmt$ is an eigenvalue decomposition of~$AA^\hmt$ such
       that the diagonal entries of~$\Lambda$ are descending. The there exist~$V\in \CC^{n\times n}$
-      and~$\Sigma \in \RR^{m\times n}$ such that~$U\Sigma V^\hmt$ is a singular value decomposition of~$A$.
+      and~$\Sigma \in \RR^{m\times n}$ such that~$U\Sigma V^\hmt$ is an SVD of~$A$.
   \end{enumerate}
 \end{corollary}
 
@@ -836,7 +845,7 @@ Lemma~\ref{lem:uav}, but there are other ways to prove it.
   \Lambda_{r,r})$ and~$\hat{V}$ be the first~$r$ columns of~$V$. Then~$\hat{V} \hat{\Lambda}
   \hat{V}^\hmt$ is a compact eigenvalue decomposition of~$A^\hmt A$. With~$\hat{U}
   = A\hat{V}\hat{\Lambda}^{-\frac{1}{2}}$, we know that~$\hat{U}\hat{\Lambda}^{\frac{1}{2}}\hat{V}^\hmt$ is
-  a compact singular value decomposition of~$A$.
+  a compact SVD of~$A$.
   Let~$\tilde{U}\in \CC^{m\times(m-r)}$ be any matrix such that~$(\hat{U}\; \tilde{U})$ is
   unitary. Then
   \begin{equation*}
@@ -847,7 +856,7 @@ Lemma~\ref{lem:uav}, but there are other ways to prove it.
     \end{pmatrix}
     V^\hmt
   \end{equation*}
-  is a singular value decomposition of~$A$.
+  is an SVD of~$A$.
 \end{proof}
 
 \subsubsection{The Wielandt-Lanczos approach~\cite{Lanczos_1958}}
@@ -979,12 +988,12 @@ Lemma~\ref{lem:uav}, but there are other ways to prove it.
   \end{equation}
   is a compact eigenvalue decomposition of the Jordan-Wielandt matrix~$J$ in~\eqref{eq:JW}
   if and only if both~$(\sqrt{2} U_1)\Sigma (\sqrt{2} V_1)^\hmt$ and~$(-\sqrt{2}U_2)\Sigma (\sqrt{2}V_2)^\hmt$ are
-  compact singular value decompositions of~$A$.
+  compact SVDs of~$A$.
 \end{theorem}
 
 \begin{proof} 1.~Assume that~\eqref{eq:evdJ} is a compact eigenvalue decomposition of~$J$.
   We will prove that $(\sqrt{2} U_1)\Sigma (\sqrt{2} V_1)^\hmt$ is a
-  compact singular value decompositions~of~$A$, and the other one can be discussed similarly.
+  compact SVDs~of~$A$, and the other one can be discussed similarly.
   It suffices to show that
   \begin{equation}
     \label{eq:svdA}
@@ -1087,14 +1096,14 @@ Lemma~\ref{lem:uav}, but there are other ways to prove it.
   from which we can obtain $A = 2U_1\Sigma V_1^\hmt$ by straightforward calculations.
 
   2.~Assume that both~$(\sqrt{2}U_1)\Sigma (\sqrt{2}V_1)^\hmt$
-  and~$(-\sqrt{2}U_2)\Sigma(\sqrt{2}V_2)^\hmt$ are compact singular value decompositions of~$A$.
+  and~$(-\sqrt{2}U_2)\Sigma(\sqrt{2}V_2)^\hmt$ are compact SVDs of~$A$.
   Then we have~\eqref{eq:svdA} and
   \begin{equation}
     \label{eq:svdA2}
      U_2^\hmt U_2 \;=\; V_2^\hmt V_2 \;=\; \dfrac{I_r}{2},
     \quad -U_2\Sigma V_2^\hmt \;=\; \dfrac{A}{2}.
   \end{equation}
-  To prove that~\eqref{eq:evdJ} is a compact singular value decomposition for~$J$, it suffices to show
+  To prove that~\eqref{eq:evdJ} is a compact SVD for~$J$, it suffices to show
   \begin{equation*}
     \begin{pmatrix}
       0 & A\\
@@ -1233,7 +1242,7 @@ The following proposition collects various characterizations of partial isometri
     and~$(AA^\hmt)^2=AA^\hmt AA^\hmt =AA^\hmt$, we know that all the nonzero eigenvalues of~$AA^\hmt$ are $1$.
 
     \ref{it:sina}~$\Rightarrow$~\ref{it:ai}.~Let~$r=\rank(A)$. If~$r = 0$, then the conclusion is trivially true.
-       Otherwise, $A$ has a compact singular value decomposition of the form~$UV^\hmt$,
+       Otherwise, $A$ has a compact SVD of the form~$UV^\hmt$,
        where~$U\in\CC^{m\times r}$ and~$V\in\CC^{n\times r}$ satisfy~$U^\hmt U = V^\hmt V = I_r$.
        Note that the columns of~$V$ is an orthonormal basis of~$\range(A^\hmt)$.
        Therefore, for any~$x\in \range(A^\hmt)$,
@@ -1305,7 +1314,7 @@ The following proposition collects various characterizations of partial isometri
 \end{theorem}
 
 \begin{proof}
-  The existence is easy to establish by any singular value decomposition of~$A$. We only prove the
+  The existence is easy to establish by an SVD of~$A$. We only prove the
   uniqueness.
 
   Consider any decomposition in the form of~\eqref{eq:uniquesvd}.
@@ -1360,7 +1369,7 @@ Theorem~\ref{th:uniquesvd} is indeed the matrix version of the following theorem
   Suppose that~$X$ and~$Y$ are finite dimensional Hilbert spaces, and~$T\mathrel{:}X\to Y$ is a linear
   operator. Then there exist unique orthogonal decompositions
   \begin{equation*}
-    \range(T^*) = X_1 \oplus \cdots \oplus X_k, \quad
+    \range(T^\adj) = X_1 \oplus \cdots \oplus X_k, \quad
     \range(T) = Y_1 \oplus \cdots \oplus Y_k,
   \end{equation*}
   scalars~$\sigma_1>\cdots >\sigma_k$, and isometries~$T_i\mathrel{:}X_i\to Y_i$ \textnormal{(}$i=1,
@@ -1373,16 +1382,20 @@ Theorem~\ref{th:uniquesvd} is indeed the matrix version of the following theorem
 \end{theorem}
 
 
-\section{Understanding SVD as a change of basis}
+\section{SVD as a change of basis}
+
+
+Theorem~\ref{th:matrix} collects basics facts about the matrix representation of linear operators
+between finite dimensional vector spaces on~$\CC$.
 
 \begin{theorem}
   \label{th:matrix}
-  Suppose that~$X$ is finite dimensional vector space on~$\FF$ with $\{x_1,  \dots,
-  x_n\}$ being its basis and~$C_\sss{X} : X \to \FF^{n}$ being the map from any point in~$X$ to its
-  coordinate under this basis; $Y$, $\{y_1, \dots, y_m\}$, and~$C_\sss{Y} : Y \to \FF^{m}$ are similar.
+  Suppose that~$X$ is finite dimensional vector space on~$\CC$ with $\{x_1,  \dots,
+  x_n\}$ being its basis and~$C_\sss{X} : X \to \CC^{n}$ being the map from any point in~$X$ to its
+  coordinate under this basis; $Y$, $\{y_1, \dots, y_m\}$, and~$C_\sss{Y} : Y \to \CC^{m}$ are similar.
   Consider a linear operator~$T \mathrel{:} X \to Y$.
   \begin{enumerate}[leftmargin=1.5em]
-    \item There is a unique matrix~$A\in \FF^{m\times n}$
+    \item There is a unique matrix~$A\in \CC^{m\times n}$
    that represents~$T$ under the aforementioned bases of~$X$ and~$Y$ in the sense that
   \begin{equation*}
     A C_\sss{X} (x) = C_\sss{Y} (T (x)) \quad \text{ for all } \quad x\in X,
@@ -1396,11 +1409,14 @@ Theorem~\ref{th:uniquesvd} is indeed the matrix version of the following theorem
   if~$T$ is surjective;
   when~$m=n$, $T$ is invertible if and only if~$A$ is invertible, and~$A^\inv$
   represents~$T^\inv\mathrel{:} Y\to X$ under the aforementioned bases for~$X$ and~$Y$.
-\item $A^\adj$ represents~$T^\adj \mathrel{:} Y^\adj \to X^\adj$ under the bases for~$X^*$ and~$Y^*$
-  that are dual to~$\{x_1, \dots, x_n\}$ and~$\{y_1, \dots, y_n\}$ respectively.
+\item If the bases~$\{x_1, \dots, x_n\}$ and~$\{y_1, \dots, y_m\}$ are both orthonormal,
+    then~$A^\hmt$ represents~$T^\adj \mathrel{:} Y \to X$ under these bases.
+    \textnormal{(}Here, as usual,
+    $T^*$ denotes the Hilbert adjoint of~$T$, which is the unique linear operator from~$Y$
+to~$X$ such that~$\langle y, T(x) \rangle_\sss{Y} = \langle T^\adj(y), x\rangle_\sss{X}$.\textnormal{)}
 \item Let~$\{x_1', \dots, x_n'\}$ be a basis for~$X$, $\{y_1', \dots, y_m'\}$ be a
-  basis for~$Y$, and~$B\in \FF^{m\times n}$ be the representation of~$T$ under such bases.
-  Then~$A = Q^\inv B P$, where~$P\in \FF^{n\times n}$ and~$Q\in \FF^{m \times m}$
+  basis for~$Y$, and~$B\in \CC^{m\times n}$ be the matrix representation of~$T$ under such bases.
+  Then~$A = Q^\inv B P$, where~$P\in \CC^{n\times n}$ and~$Q\in \CC^{m \times m}$
   are the changing of basis matrices such that
   \begin{equation*}
     (x_1\; \cdots\; x_n) = (x_1'\; \cdots\; x_n')P, \qquad
@@ -1413,9 +1429,10 @@ With the view point presented in~Theorem~\ref{th:matrix}, we can understand SVD 
 
 Let~$A\in \CC^{m\times n}$ be a nonzero matrix, and~$U\Sigma V^\hmt$ be its SVD.
 Consider the linear operator~$T \mathrel{:} x \mapsto A x$ from~$\CC^{n}$ to~$\CC^{m}$.
-Then~$A$ represents~$T$ under the canonical bases. If we take the columns of~$V$ as the basis
-for~$\CC^{n}$ and those of~$U$ as the basis for~$\CC^{m}$, then SVD provides a simple
-representation for~$T$, which is~$\Sigma$.
+Then~$A$ represents~$T$ under the canonical bases.
+The aforementioned SVD suggests a change of basis that can simplify the matrix representation of~$T$:
+if we take the columns of~$V$ as the basis for~$\CC^{n}$ and those of~$U$ as the basis for~$\CC^{m}$,
+then the matrix representation of~$T$ under these bases is~$\Sigma$, which is diagonal.
 
 %Suppose that~$\hat{U}\hat{\Sigma} \hat{V}^\hmt$ is a compact SVD of~$A$.
 %Then~$A \hat{V} = \hat{U}\hat{\Sigma}$.
@@ -1436,10 +1453,10 @@ is nonzero.
 The restriction~$\hat{T} \mathrel{:} \range(A^\hmt)\to\range(A)$ with~$\hat{T} (x) =Ax$ is however
 always an isomorphism.
 Suppose that~$\hat{U}\hat{\Sigma} \hat{V}^\hmt$ is a compact SVD of~$A$.
-Note that the columns of~$\hat{U}$ form an orthogonal basis
+Then the columns of~$\hat{U}$ form an orthogonal basis
 for~$\range(A)$, and those of~$\hat{V}$ form an orthonormal basis for~$\range(A^\hmt)$.
 Under these bases,~$\hat{T}$ is represented by~$\hat{\Sigma}$.
-The representation for~$\hat{T}^\inv\mathrel{:} \range(A)\to \range(A^\hmt)$ be
+The matrix representation for its inverse~$\hat{T}^\inv\mathrel{:} \range(A)\to \range(A^\hmt)$
 is~$\hat{\Sigma}^\inv$.
 
 The operator~$T^\pin \mathrel{:} \CC^{m}\to \CC^{n}$~defined by%
@@ -1448,15 +1465,15 @@ T^\pin|_{\range(A)} = \hat{T}^\inv, \quad
 T^\pin|_{\ker(A^\hmt)} = 0
 \]
 is called the Moore-Penrose pseudoinverse of~$T$.
-The representation
-of~$T^\pin$ under the canonical bases is called the Moore-Penrose pseudoinverse of~$A$, which turns
-out to be~$A^\pin = \hat{U}\hat{\Sigma}^\inv\hat{V}^\hmt$.
+The matrix representation
+of~$T^\pin$ under the canonical bases is called the Moore-Penrose pseudoinverse of~$A$, which
+turns out to be~$\hat{U}\hat{\Sigma}^\inv\hat{V}^\hmt$.
 
-We can regard any nonzero linear operator as a bijection by restricting its domain and image
-space.
-SVD tells us that any nonzero linear operator between finite dimensional Hilbert spaces
-can be represented by a positive diagonal matrix under properly chosen orthonormal bases for the
-restricted domain and image space. This can also lead us to Theorem~\ref{th:orthodec}.
+Given any nonzero linear operator between~$T$ two finite dimensional Hilbert spaces, the restriction
+of~$T$ on~$\ker(T)^\perp = \range(T^*)$ is a bijection between~$\range(T^*)$ and~$\range(T)$.
+SVD tells us that such a restriction can be represented by a positive diagonal matrix under properly
+chosen orthonormal bases for~$\range(T^*)$ and~$\range(T)$. 
+This can also lead us to Theorem~\ref{th:orthodec}.
 
 
 \section{Examples of applications}

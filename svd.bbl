@@ -1,4 +1,10 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Bai_etal_2000}
+Z.~Bai, J.~Demmel, J.~Dongarra, A.~Ruhe, and H.~{van der Vorst}.
+\newblock {\em Templates for the Solution of Algebraic Eigenvalue Problems: A
+  Practical Guide}.
+\newblock Software Environ. Tools. SIAM, 2000.
 
 \bibitem{Eckart_Young_1939}
 C.~Eckart and G.~Young.
