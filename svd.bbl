@@ -23,6 +23,11 @@ L.~Han and M.~Neumann.
 \newblock In L.~Hogben, editor, {\em Handbook of Linear Algebra}, pages
   5--1--5--21. CRC Press, Boca Raton, FL, 2013.
 
+\bibitem{Horn_Johnson_2012}
+R.~A. Horn and C.~R. Johnson.
+\newblock {\em Matrix Analysis}.
+\newblock Cambridge University Press, Cambridge, second edition, 2012.
+
 \bibitem{Jordan_1874}
 C.~Jordan.
 \newblock M\'{e}moire sur les formes bilin\'{e}aires.

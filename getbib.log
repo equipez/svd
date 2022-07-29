@@ -12,24 +12,16 @@ Result of checking /home/zaikunzhang/Work/finished/svd/svd.bib in BibTeX mode
 ===> Message from biber:
 
 ******** Difference between the new bib and the original one ********
-7c7
-< @string{set = "Software Environ. Tools"}
----
-> @string{set="Software Environ. Tools"}
-12,17c12,17
-<     author    = {Bai, Z. and Demmel, J. and Dongarra, J. and Ruhe, A. and {van der Vorst}, H.},
-<     publisher = {SIAM},
-<     address   = {Philadelphia},
-<     series    = set,
-<     title     = {Templates for the Solution of Algebraic Eigenvalue Problems: A Practical Guide},
-<     year      = {2000},
----
->   title={Templates for the Solution of Algebraic Eigenvalue Problems: A Practical Guide},
->   author={Bai, Z. and Demmel, J. and Dongarra, J. and Ruhe, A. and {van der Vorst}, H.},
->   year={2000},
->   series = set,
->   publisher={SIAM}
->   address ={Philadelphia}
+49,57d48
+< @book{Horn_Johnson_2012,
+<     author    = {Horn, R. A. and Johnson, C. R.},
+<     publisher = {Cambridge University Press},
+<     address   = {Cambridge},
+<     edition   = {second},
+<     title     = {Matrix Analysis},
+<     year      = {2012},
+< }
+< 
 
 A copy of the original bib file is saved at
-./backup//%home%zaikunzhang%Work%finished%svd%svd.bib-2022.07.30-00.32.50
+./backup//%home%zaikunzhang%Work%finished%svd%svd.bib-2022.07.30-01.08.11
