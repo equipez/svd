@@ -1202,14 +1202,15 @@ The following proposition collects various characterizations of partial isometri
     \item \label{it:ahaah} $A^\hmt A A^\hmt = A^\hmt$.
     \item \label{it:aaha} $A A^\hmt A = A$.
     \item \label{it:sina} All the nonzero singular values of~$A$ are~$1$.
-    \item \label{it:iso} The linear operator~$T\mathrel{:} x \mapsto Ax$ is an isometric isomorphism from~$\range(A^\hmt)$ to $\range(A)$.
+    \item \label{it:iso} The linear operator~$x \mapsto Ax$ is an isometric isomorphism from~$\range(A^\hmt)$ to $\range(A)$.
+    \item \label{it:isoh} The linear operator~$x \mapsto A^\hmt x$ is an isometric isomorphism from~$\range(A)$ to $\range(A^\hmt)$.
   \end{enumerate}
 \end{proposition}
 
 \begin{proof}
   \ref{it:ai} $\Rightarrow $ \ref{it:iso}.~Obvious.
 
-  \ref{it:iso} $\Rightarrow $ \ref{it:ahi}.~Take any~$x\in \range(A)$.
+  \ref{it:iso} $\Rightarrow $ \ref{it:isoh}.~Take any~$x\in \range(A)$.
   There is a~$y \in \range(A^\hmt)$ such that~$x=Ay$. By assumption, $\|y\|=\|x\|$. Hence
     \begin{equation*}
       \|A^\hmt x\| \;\ge\; (y/\|y\|)^\hmt A^\hmt x \;=\; \frac{1}{\|x\|} y^\hmt A^\hmt x \;=\;
@@ -1225,6 +1226,8 @@ The following proposition collects various characterizations of partial isometri
       \|A^\hmt x\| \;=\; \max_{\|z\|=1}z^\hmt A^\hmt x
       \;\le\; \max_{\|z\|=1}\|Az\|\|x\| \;\le\; \|x\|.
     \end{equation*}
+
+    \ref{it:isoh} $\Rightarrow$ \ref{it:ahi}.~Obvious.
 
     \ref{it:ahi} $\Rightarrow $ \ref{it:aha}.~Since~$A^\hmt A$ is Hermitian, it suffices to show that it is idempotent. We
       only need to prove that~$x^\hmt(A^\hmt A)^2y=x^\hmt A^\hmt Ay$ for any~$x$ and~$y\in \RR^n$,
