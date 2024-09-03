@@ -333,6 +333,7 @@ its~$(i,j)$ entry.
 
 \section{Eigenvalue decomposition}
 
+The following theorem and definition can be found in textbooks on linear algebra.
 \begin{theorem}
   \label{th:evd}
   For any Hermitian matrix~$A\in \CC^{n\times n}$, there exists a unitary matrix~$U\in
@@ -847,7 +848,7 @@ Lemma~\ref{lem:uav}, but there are other ways to prove it.
   We only prove 1. Suppose that~$\rank(A) = r$. Let~$\hat{\Lambda} = \diag(\Lambda_{1,1}, \dots,
   \Lambda_{r,r})$ and~$\hat{V}$ be the first~$r$ columns of~$V$. Then~$\hat{V} \hat{\Lambda}
   \hat{V}^\hmt$ is a compact eigenvalue decomposition of~$A^\hmt A$. With~$\hat{U}
-  = A\hat{V}\hat{\Lambda}^{-\frac{1}{2}}$, we know that~$\hat{U}\hat{\Lambda}^{\frac{1}{2}}\hat{V}^\hmt$ is
+  = A\hat{V}\hat{\Lambda}^{-\frac{1}{2}}$, we know from Theorem~\ref{th:ey} that~$\hat{U}\hat{\Lambda}^{\frac{1}{2}}\hat{V}^\hmt$ is
   a compact SVD of~$A$.
   Let~$\tilde{U}\in \CC^{m\times(m-r)}$ be any matrix such that~$(\hat{U}\; \tilde{U})$ is
   unitary. Then
@@ -996,7 +997,7 @@ Lemma~\ref{lem:uav}, but there are other ways to prove it.
 
 \begin{proof} 1.~Assume that~\eqref{eq:evdJ} is a compact eigenvalue decomposition of~$J$.
   We will prove that $(\sqrt{2} U_1)\Sigma (\sqrt{2} V_1)^\hmt$ is a
-  compact SVDs~of~$A$, and the other one can be discussed similarly.
+  compact SVD~of~$A$, and the other one can be discussed similarly.
   It suffices to show that
   \begin{equation}
     \label{eq:svdA}
@@ -1475,7 +1476,7 @@ The matrix representation
 of~$T^\pin$ under the canonical bases is called the Moore-Penrose pseudoinverse of~$A$, which
 turns out to be~$\hat{U}\hat{\Sigma}^\inv\hat{V}^\hmt$.
 
-Given any nonzero linear operator between~$T$ two finite dimensional Hilbert spaces, the restriction
+Given any nonzero linear operator~$T$ between two finite dimensional Hilbert spaces, the restriction
 of~$T$ on~$\ker(T)^\perp = \range(T^*)$ is a bijection between~$\range(T^*)$ and~$\range(T)$.
 SVD tells us that such a restriction can be represented by a positive diagonal matrix under properly
 chosen orthonormal bases for~$\range(T^*)$ and~$\range(T)$.
