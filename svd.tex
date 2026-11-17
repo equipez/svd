@@ -387,7 +387,7 @@ The following theorem and definition can be found in textbooks on linear algebra
   Suppose that~$A\in \CC^{m\times n}$ is a matrix with~$\rank(A) = r$, and~$A = U\Sigma V^\hmt$.
   \begin{enumerate}[leftmargin=1.5em]
     \item
-      $U\Sigma V^\hmt$ is called an singular value decomposition of~$A$,
+      $U\Sigma V^\hmt$ is called a singular value decomposition of~$A$,
       provided that~$U \in \CC^{m\times m}$ and~$V\in\CC^{n\times n}$ are unitary matrices,
       and~$\Sigma \in \RR^{m\times n}$ is a matrix whose first~$r$ diagonal entries~(if~$r\ge 1$)
       are positive while all the other entries are zero.
@@ -398,7 +398,7 @@ The following theorem and definition can be found in textbooks on linear algebra
   \item When~$m\ge n$, $U\Sigma V^\hmt$ is called a thin (or economy-sized) singular value
       decomposition of~$A$,
       provided that~$U \in \CC^{m\times n}$ and~$V\in \CC^{n\times n}$ satisfy~$U^\hmt U = V^\hmt V = I_n$,
-      and~$\Sigma \in \RR^{m\times m}$ is a matrix whose first~$r$ diagonal entries~(if~$r\ge 1$)
+      and~$\Sigma \in \RR^{n\times n}$ is a matrix whose first~$r$ diagonal entries~(if~$r\ge 1$)
       are positive while all the other entries are zero.
       When~$n\ge m$, a thin singular value decomposition can be defined similarly.
   \end{enumerate}
@@ -413,10 +413,10 @@ The following theorem and definition can be found in textbooks on linear algebra
 
 \begin{remark}
 If~$U\Sigma V^\hmt$ is a \textnormal{(}compact\textnormal{)} SVD
-of~$A$, then~$AV = U\Sigma$ and~$A^\hmt U = V\Sigma$.
-Let~$\sigma_i=\Sigma_{i,i}$, $u_i$ be the~$i$-th column of~$U$,
-and~$v_i$ be the~$i$-th column of~$V$.
-Then~$A v_i = \sigma_i u_i$ and~$A^\hmt u_i = \sigma_i v_i$; $u_i$ and~$v_i$
+of~$A$, then~$AV = U\Sigma$ and~$A^\hmt U = V\Sigma^\hmt$.
+Let~$\sigma_i=\Sigma_{i,i}$,~$u_i$ be the~$i$-th column of~$U$,
+and~$v_i$ be the~$i$-th column of~$V$, where~$1\le i \le \min\{m,n\}$.
+Then~$A v_i = \sigma_i u_i$ and~$A^\hmt u_i = \sigma_i v_i$;~$u_i$ and~$v_i$
 are called a pair of left and right singular vectors of~$A$ associated with the
 singular value~$\sigma_{i}$.
 \end{remark}
